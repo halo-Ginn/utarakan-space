@@ -180,7 +180,7 @@ export default function Header() {
               }
 
               return (
-                <Link key={item.href} href={item.href}
+                <Link key={item.href} href={item.href ?? '/'}
                   onClick={() => setMenuOpen(false)}
                   className="flex px-2 py-2.5 text-sm font-medium rounded-lg transition-colors"
                   style={{ color: pathname === item.href ? '#b87333' : '#4a5d4a' }}
