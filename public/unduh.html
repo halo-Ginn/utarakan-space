@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <link rel="prefetch" href="/qris">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terima Kasih — Utarakan</title>
+
+  <!-- R2 (2026-08-01): all placeholders filled. Requires in /public: bundel-utarakan.zip, qris.jpeg, logo.png -->
+
+  <style>
+    :root {
+      --bg-primary: #FAF7F2;
+      --bg-secondary: #EDE7DA;
+      --accent-terracotta: #C4633A;
+      --accent-terracotta-dark: #A34E2C;
+      --accent-sage: #7A9E7E;
+      --accent-sage-dark: #628265;
+      --text-primary: #2C1F14;
+      --text-secondary: #6B4F38;
+      --text-muted: #9E8D7E;
+      --border-color: rgba(139, 115, 94, 0.18);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-primary);
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .card {
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 40px 32px;
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      margin: 0 0 20px;
+      color: var(--text-primary);
+    }
+
+    .message {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      white-space: pre-line;
+    }
+
+    .signature {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--accent-terracotta-dark);
+      margin: 20px 0 28px;
+    }
+
+    .fallback {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .fallback a {
+      color: var(--accent-terracotta-dark);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 0 0 24px;
+    }
+
+    .social-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <img class="logo" src="/logo.png" alt="Utarakan">
+
+    <h1>Semoga bermanfaat. 🌿</h1>
+
+    <p class="message">Terima kasih untuk kamu yang sudah membantu kami berkembang dengan donasi, kontribusimu menjaga
+      ruang ini tetap hidup dan membantu kami untuk menjangkau lebih banyak orang dengan lebih banyak karya ke depannya.
+
+      Kamu tidak sendirian. 💛</p>
+
+    <p class="signature">Salam hangat,<br>utarakan.space 🌿</p>
+
+    <p class="fallback">
+      Unduhan belum mulai otomatis? <a id="manual-download-link" href="/bundel-utarakan.zip">Klik di sini</a>
+    </p>
+
+    <hr class="divider">
+
+    <p class="social-label">Ingin Ikut Berkontribusi?</p>
+    <div class="social-links" style="margin-bottom: 14px;">
+      <a href="https://teer.id/utarakan.di.sini" target="_blank" rel="noreferrer">❤️ Trakteer</a>
+      <a href="https://paypal.me/utarakan" target="_blank" rel="noreferrer">PayPal</a>
+    </div>
+
+    <div
+      style="display:flex; gap:14px; align-items:center; text-align:left; padding: 16px; border-radius: 14px; background: var(--bg-secondary); border: 1px solid var(--border-color); margin-bottom: 24px;">
+      <a href="/qris" style="flex-shrink:0;" title="Klik untuk memperbesar QRIS"><img src="/qris.jpg"
+          alt="QRIS Utarakan — scan untuk donasi. Klik untuk memperbesar."
+          style="width:110px; height:auto; border-radius:8px; background:#fff; border:1px solid var(--border-color); display:block;"></a>
+      <p style="font-size:12px; color: var(--text-secondary); line-height:1.6; margin:0;">
+        Atau scan QRIS ini kapan aja kamu siap — GoPay, OVO, DANA, m-banking apa pun.
+      </p>
+    </div>
+
+    <p class="social-label">Ikuti Perjalanan Kami</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/utarakan.di.sini/" target="_blank" rel="noreferrer">📷 Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61591940339326" target="_blank" rel="noreferrer">👤 Facebook
+        Page</a>
+      <a href="https://www.facebook.com/groups/902090692283568" target="_blank" rel="noreferrer">👥 Facebook Group</a>
+    </div>
+  </div>
+
+  <script>
+    // Auto-trigger the download once the page loads.
+    // Browsers may block this on some setups — that's exactly why the
+    // manual fallback link above exists, always keep both.
+    const FILE_BUNDLE_URL = "/bundel-utarakan.zip";
+
+    window.addEventListener("load", () => {
+      if (!FILE_BUNDLE_URL.startsWith("#")) {
+        const a = document.createElement("a");
+        a.href = FILE_BUNDLE_URL;
+        a.download = "";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+    });
+
+    document.getElementById("manual-download-link").href = FILE_BUNDLE_URL;
+  </script>
+
+</body>
+
+</html>

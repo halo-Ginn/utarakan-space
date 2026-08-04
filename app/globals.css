@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties ──────────────────────────────── */
+:root {
+  --forest-dark:  #2d3b2d;
+  --forest-mid:   #4a5d4a;
+  --forest-muted: #6b7f6b;
+  --copper:       #b87333;
+  --copper-light: #d4943a;
+  --gold:         #d4af37;
+  --gold-light:   #e8cc6e;
+  --cream:        #fcfbf7;
+  --cream-warm:   #f5f0e8;
+  --cream-muted:  #ede8df;
+  --text-primary: #2d3b2d;
+  --text-muted:   #6b7f6b;
+}
+
+/* ── Base Resets ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-warm);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--forest-muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--copper);
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', Georgia, serif;
+  color: var(--forest-dark);
+  line-height: 1.35;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+/* ── Utility Components ─────────────────────────────────── */
+@layer components {
+  /* Copper button */
+  .btn-copper {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm
+           text-white transition-all duration-200 cursor-pointer;
+    background: linear-gradient(135deg, #b87333, #d4af37);
+    box-shadow: 0 4px 16px rgba(184, 115, 51, 0.3);
+  }
+  .btn-copper:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(184, 115, 51, 0.45);
+  }
+  .btn-copper:active {
+    transform: translateY(0);
+  }
+
+  /* Forest button */
+  .btn-forest {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm
+           text-white transition-all duration-200 cursor-pointer;
+    background: linear-gradient(135deg, #2d3b2d, #4a5d4a);
+    box-shadow: 0 4px 16px rgba(45, 59, 45, 0.2);
+  }
+  .btn-forest:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(45, 59, 45, 0.35);
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm
+           transition-all duration-200 cursor-pointer border;
+    color: var(--forest-dark);
+    border-color: var(--forest-muted);
+    background: transparent;
+  }
+  .btn-ghost:hover {
+    background: var(--cream-warm);
+    border-color: var(--copper);
+    color: var(--copper);
+  }
+
+  /* Card */
+  .card {
+    @apply rounded-2xl p-6 transition-all duration-300;
+    background: white;
+    box-shadow: 0 4px 24px rgba(45, 59, 45, 0.08);
+    border: 1px solid var(--cream-muted);
+  }
+  .card:hover {
+    box-shadow: 0 8px 40px rgba(45, 59, 45, 0.14);
+    transform: translateY(-2px);
+  }
+
+  /* Copper card border accent */
+  .card-copper {
+    @apply card;
+    border-top: 3px solid var(--copper);
+  }
+
+  /* Copper divider */
+  .divider-copper {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #b87333, #d4af37, #b87333, transparent);
+    border: none;
+    opacity: 0.6;
+  }
+
+  /* Section container */
+  .section {
+    @apply w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
+  }
+
+  /* Tag / badge */
+  .badge-copper {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
+    background: rgba(184, 115, 51, 0.12);
+    color: var(--copper);
+    border: 1px solid rgba(184, 115, 51, 0.25);
+  }
+
+  /* Language toggle */
+  .lang-toggle {
+    @apply flex items-center gap-0 rounded-full p-0.5 text-xs font-semibold;
+    background: rgba(45, 59, 45, 0.1);
+  }
+  .lang-toggle-btn {
+    @apply px-3 py-1.5 rounded-full transition-all duration-200 cursor-pointer;
+    color: var(--forest-muted);
+  }
+  .lang-toggle-btn.active {
+    background: var(--forest-dark);
+    color: var(--cream);
+  }
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.animate-fade-in  { animation: fadeIn  0.6s ease-out; }
+.animate-slide-up { animation: slideUp 0.5s ease-out; }
+.animate-pulse-soft { animation: pulseSoft 3s ease-in-out infinite; }
+
+/* Copper shimmer text */
+.text-copper-shimmer {
+  background: linear-gradient(90deg, #b87333, #d4af37, #b87333);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Leaf decoration */
+.leaf-bg {
+  position: relative;
+  overflow: hidden;
+}
+.leaf-bg::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(ellipse at center, rgba(74, 93, 74, 0.08) 0%, transparent 70%);
+  border-radius: 50% 30% 60% 40%;
+  pointer-events: none;
+}
+.leaf-bg::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(ellipse at center, rgba(184, 115, 51, 0.06) 0%, transparent 70%);
+  border-radius: 40% 60% 30% 50%;
+  pointer-events: none;
+}
