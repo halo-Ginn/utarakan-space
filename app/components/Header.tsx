@@ -70,7 +70,7 @@ export default function Header() {
 
               const isActive = pathname === item.href
               return (
-                <Link key={item.href} href={item.href}
+                <Link key={item.href} href={item.href ?? '/'}
                   className="relative text-sm font-medium transition-colors duration-200 py-1"
                   style={{ color: isActive ? '#b87333' : '#4a5d4a' }}
                 >
