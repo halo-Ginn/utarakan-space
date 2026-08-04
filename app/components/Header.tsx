@@ -119,7 +119,7 @@ export default function Header() {
                   <circle cx="18" cy="16" r="3" />
                 </svg>
               )}
-            </button><audio ref={audioRef} src="/ambient.WAV" loop preload="none" />
+            </button><audio ref={audioRef} src="/ambient.wav" loop preload="none" />
 
             {/* Language Toggle */}
             <div className="lang-toggle" role="group" aria-label="Language toggle">
