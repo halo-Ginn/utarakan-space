@@ -124,7 +124,10 @@ export default function Foyer() {
             {/* teks */}
             <h1 className="font-serif" style={{
                 position: 'absolute', top: 'calc(50% + 130px)', left: '50%', transform: 'translateX(-50%)',
-                width: 'max-content', fontSize: 'clamp(30px, 10vw, 52px)', maxWidth: '94vw', textAlign: 'center', fontWeight: 700, letterSpacing: '-0.02em', zIndex: 2,
+                width: 'max-content', fontSize: 'clamp(20px, 8vw, 52px)',
+                whiteSpace: 'nowrap',
+                letterSpacing: '0.02em',
+                maxWidth: '94vw', textAlign: 'center', fontWeight: 700, zIndex: 2,
                 background: 'linear-gradient(135deg, #7a5635 0%, #ce9b71 35%, #a79761ff 50%, #a79b73 65%, #7a5635 100%)',
                 WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
                 filter: 'drop-shadow(0 6px 20px rgba(68, 55, 40, 0.5)) drop-shadow(0 2px 8px rgba(0,0,0,0.35))'
@@ -143,7 +146,7 @@ export default function Foyer() {
                 width: 'max-content', maxWidth: '92vw', textAlign: 'center', color: 'rgba(220,231,220,0.7)', fontSize: '12px',
                 letterSpacing: '0.14em', textTransform: 'uppercase', textShadow: '0 1px 6px rgba(0,0,0,0.4)', zIndex: 2
             }}>
-                sentuh untuk masuk 🌿
+                ketuk teratai untuk masuk 🌿
             </p>
             <p style={{
                 position: 'absolute', bottom: '12px', left: '50%', transform: 'translateX(-50%)',
@@ -163,12 +166,15 @@ export default function Foyer() {
                 aria-label="Musik"
                 style={{
                     position: 'absolute', bottom: '44px', left: '50%', transform: 'translateX(-50%)',
-                    width: '36px', height: '36px', borderRadius: '50%', zIndex: 3, cursor: 'pointer',
-                    background: 'rgba(45,59,45,0.35)', border: '1px solid rgba(212,175,55,0.35)',
-                    color: '#dce7dc', fontSize: '15px', lineHeight: '1'
+                    width: '38px', height: '38px', borderRadius: '50%', zIndex: 5, cursor: 'pointer',
+                    background: 'rgba(45,59,45,0.3)',
+                    border: soundOn ? '1.5px solid rgba(212,175,55,0.8)' : '1px solid rgba(212,175,55,0.35)',
+                    boxShadow: soundOn ? '0 0 14px rgba(212,175,55,0.35)' : 'none',
+                    color: soundOn ? '#f8e284' : 'rgba(220,231,220,0.7)',
+                    fontSize: '17px', lineHeight: '1', transition: 'all 0.4s ease'
                 }}
             >
-                {soundOn ? '🔊' : '🔇'}
+                {soundOn ? '♫' : '♪'}
             </button>
             <style>{`
         @keyframes foyer-breathe {
