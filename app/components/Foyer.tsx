@@ -14,6 +14,7 @@ export default function Foyer() {
     const [leaving, setLeaving] = useState(false)
     const rootRef = useRef<HTMLDivElement | null>(null)
     const lastRipple = useRef(0)
+    const [soundOn, setSoundOn] = useState(false)
 
     useEffect(() => {
         try { document.getElementById('foyer-preload')?.remove() } catch { }
@@ -58,13 +59,10 @@ export default function Foyer() {
     return (
         <div
             ref={rootRef}
-            onClick={enter}
             onPointerMove={(e) => spawnRipple(e.clientX, e.clientY)}
-            role="button"
-            aria-label="Masuk ke Utarakan"
             style={{
                 visibility: 'visible',
-                position: 'fixed', inset: 0, zIndex: 9999, cursor: 'pointer',
+                position: 'fixed', inset: 0, zIndex: 9999, cursor: 'default',
                 overflow: 'hidden',
                 backgroundColor: '#2d3b2d',
                 backgroundImage:
@@ -112,11 +110,21 @@ export default function Foyer() {
                     animation: 'foyer-breathe 6s ease-in-out infinite'
                 }} />
 
+            {/* area sentuh: logo + cincin */}
+            <button
+                onClick={enter}
+                aria-label="Masuk ke Utarakan"
+                style={{
+                    ...center, width: '230px', height: '230px', borderRadius: '50%',
+                    background: 'transparent', border: 'none', cursor: 'pointer', zIndex: 4, padding: 0
+                }}
+            />
+
             {/* teks */}
             {/* teks */}
             <h1 className="font-serif" style={{
                 position: 'absolute', top: 'calc(50% + 130px)', left: '50%', transform: 'translateX(-50%)',
-                width: 'max-content', fontSize: '52px', fontWeight: 700, letterSpacing: '-0.02em', zIndex: 2,
+                width: 'max-content', fontSize: 'clamp(30px, 10vw, 52px)', maxWidth: '94vw', textAlign: 'center', fontWeight: 700, letterSpacing: '-0.02em', zIndex: 2,
                 background: 'linear-gradient(135deg, #7a5635 0%, #ce9b71 35%, #a79761ff 50%, #a79b73 65%, #7a5635 100%)',
                 WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
                 filter: 'drop-shadow(0 6px 20px rgba(68, 55, 40, 0.5)) drop-shadow(0 2px 8px rgba(0,0,0,0.35))'
@@ -125,7 +133,7 @@ export default function Foyer() {
             </h1>
             <p style={{
                 position: 'absolute', top: 'calc(50% + 196px)', left: '50%', transform: 'translateX(-50%)',
-                width: 'max-content', color: '#f8e284', fontSize: '15px', letterSpacing: '0.25em', zIndex: 2,
+                width: 'max-content', maxWidth: '92vw', textAlign: 'center', color: '#f8e284', fontSize: '15px', letterSpacing: '0.25em', zIndex: 2,
                 textShadow: '0 1px 8px rgba(0,0,0,0.45)', animation: 'foyer-fade 4s ease-in-out infinite'
             }}>
                 ..di sini kita bisa bercerita..
@@ -137,7 +145,31 @@ export default function Foyer() {
             }}>
                 sentuh untuk masuk 🌿
             </p>
+            <p style={{
+                position: 'absolute', bottom: '12px', left: '50%', transform: 'translateX(-50%)',
+                width: 'max-content', color: 'rgba(220,231,220,0.32)', fontSize: '10px',
+                letterSpacing: '0.08em', zIndex: 2
+            }}>
+                © 2026 utarakan.space
+            </p>
 
+            {/* ikon suara */}
+            <button
+                onClick={(e) => {
+                    e.stopPropagation()
+                    window.dispatchEvent(new Event('utarakan-toggle-audio'))
+                    setSoundOn(!soundOn)
+                }}
+                aria-label="Musik"
+                style={{
+                    position: 'absolute', bottom: '44px', left: '50%', transform: 'translateX(-50%)',
+                    width: '36px', height: '36px', borderRadius: '50%', zIndex: 3, cursor: 'pointer',
+                    background: 'rgba(45,59,45,0.35)', border: '1px solid rgba(212,175,55,0.35)',
+                    color: '#dce7dc', fontSize: '15px', lineHeight: '1'
+                }}
+            >
+                {soundOn ? '🔊' : '🔇'}
+            </button>
             <style>{`
         @keyframes foyer-breathe {
           0%, 100% { transform: translate(-50%, -50%) scale(1); }

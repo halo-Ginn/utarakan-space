@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/app/context/LanguageContext'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 export default function Header() {
   const { lang, setLang } = useLanguage()
@@ -20,6 +20,17 @@ export default function Header() {
     { href: '/lokamanusya', label: 'Lokamanusya' },
     { disabled: true, label: 'Lokasvvara' },
   ]
+
+  useEffect(() => {
+    const toggle = () => {
+      const a = audioRef.current
+      if (!a) return
+      if (a.paused) { a.play().catch(() => { }); setAudioPlaying(true) }
+      else { a.pause(); setAudioPlaying(false) }
+    }
+    window.addEventListener('utarakan-toggle-audio', toggle)
+    return () => window.removeEventListener('utarakan-toggle-audio', toggle)
+  }, [])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b"
@@ -195,3 +206,4 @@ export default function Header() {
     </header>
   )
 }
+
