@@ -2,12 +2,11 @@
 <html lang="id">
 
 <head>
-  <link rel="prefetch" href="/qris">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terima Kasih — Utarakan</title>
 
-  <!-- R2 (2026-08-01): all placeholders filled. Requires in /public: bundel-utarakan.zip, qris.jpeg, logo.png -->
+  <!-- R2 (2026-08-01): all placeholders filled. Requires in /public: bundel-utarakan.zip, qris.jpg, logo.png -->
 
   <style>
     :root {
@@ -35,8 +34,8 @@
       font-family: var(--font-body);
       color: var(--text-primary);
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
       min-height: 100vh;
       padding: 24px;
     }
@@ -133,33 +132,46 @@
 
 <body>
 
-  <div class="card">
-    <img class="logo" src="/logo.png" alt="Utarakan">
+  <!-- slim site header -->
+  <div
+    style="position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:10px; width:100%; align-self:stretch;
+    padding:10px 20px; background: var(--bg-primary); border-bottom:1px solid var(--border-color); box-sizing:border-box;">
+    <a href="/" onclick="try{sessionStorage.removeItem('utarakan-foyer-seen')}catch(e){}"
+      style="display:flex; align-items:center; gap:8px; text-decoration:none;">
+      <img src="/logo.png" alt="" style="width:28px; height:28px; border-radius:50%; object-fit:cover;">
+      <span style="font-family: var(--font-heading); font-size:15px; color: var(--text-primary);">Utarakan</span>
+    </a>
+  </div>
 
+  <div class="card" style="margin: 28px auto;">
+    <a href="/" title="Kembali ke Beranda" onclick="try{sessionStorage.removeItem('utarakan-foyer-seen')}catch(e){}"
+      style="display:inline-block; cursor:pointer;"><img class="logo" src="/logo.png"
+        alt="Utarakan — kembali ke beranda"></a>
+
+    <!-- 1 -->
     <h1>Semoga bermanfaat. 🌿</h1>
 
-    <p class="message">Terima kasih untuk kamu yang sudah membantu kami berkembang dengan donasi, kontribusimu menjaga
-      ruang ini tetap hidup dan membantu kami untuk menjangkau lebih banyak orang dengan lebih banyak karya ke depannya.
-
-      Kamu tidak sendirian. 💛</p>
-
-    <p class="signature">Salam hangat,<br>utarakan.space 🌿</p>
-
-    <p class="fallback">
+    <!-- 2 -->
+    <p class="fallback" style="margin-top:4px;">
       Unduhan belum mulai otomatis? <a id="manual-download-link" href="/bundel-utarakan.zip">Klik di sini</a>
     </p>
 
     <hr class="divider">
 
+    <!-- 3 -->
     <p class="social-label">Ingin Ikut Berkontribusi?</p>
     <div class="social-links" style="margin-bottom: 14px;">
-      <a href="https://teer.id/utarakan.di.sini" target="_blank" rel="noreferrer">❤️ Trakteer</a>
-      <a href="https://paypal.me/utarakan" target="_blank" rel="noreferrer">PayPal</a>
+      <a href="https://teer.id/utarakan.di.sini" target="_blank" rel="noreferrer"
+        style="background: rgba(196,99,58,0.12); border-color: rgba(196,99,58,0.35); color:#A34E2C; font-weight:600;">❤️
+        Trakteer</a>
+      <a href="https://paypal.me/utarakan" target="_blank" rel="noreferrer"
+        style="background: rgba(0,112,186,0.10); border-color: rgba(0,112,186,0.30); color:#00568F; font-weight:600;">🅿️
+        PayPal</a>
     </div>
 
     <div
-      style="display:flex; gap:14px; align-items:center; text-align:left; padding: 16px; border-radius: 14px; background: var(--bg-secondary); border: 1px solid var(--border-color); margin-bottom: 24px;">
-      <a href="/qris" style="flex-shrink:0;" title="Klik untuk memperbesar QRIS"><img src="/qris.jpg"
+      style="display:flex; gap:14px; align-items:center; text-align:left; padding: 16px; border-radius: 14px; background: rgba(122,158,126,0.10); border: 1px solid rgba(122,158,126,0.35); margin-bottom: 24px;">
+      <a href="/qris" style="flex-shrink:0;" title="Buka halaman QRIS"><img src="/qris.jpg"
           alt="QRIS Utarakan — scan untuk donasi. Klik untuk memperbesar."
           style="width:110px; height:auto; border-radius:8px; background:#fff; border:1px solid var(--border-color); display:block;"></a>
       <p style="font-size:12px; color: var(--text-secondary); line-height:1.6; margin:0;">
@@ -167,6 +179,17 @@
       </p>
     </div>
 
+    <!-- 4 -->
+    <p class="message">Terima kasih untuk kamu yang sudah membantu kami berkembang dengan donasi, kontribusimu menjaga
+      ruang ini tetap hidup dan membantu kami untuk menjangkau lebih banyak orang dengan lebih banyak karya ke depannya.
+
+      Kamu tidak sendirian. 💛</p>
+
+    <p class="signature">Salam hangat,<br>utarakan.space 🌿</p>
+
+    <hr class="divider">
+
+    <!-- 5 -->
     <p class="social-label">Ikuti Perjalanan Kami</p>
     <div class="social-links">
       <a href="https://www.instagram.com/utarakan.di.sini/" target="_blank" rel="noreferrer">📷 Instagram</a>
@@ -176,24 +199,48 @@
     </div>
   </div>
 
+  <!-- 6: compact site footer -->
+  <div style="text-align:center; padding: 8px 20px 32px;">
+    <div style="max-width:440px; margin: 0 auto 18px; padding: 14px 18px; border-radius: 14px;
+      background: rgba(200,90,70,0.07); border: 1px solid rgba(200,90,70,0.25); text-align:center;">
+      <p style="font-weight:700; font-size:13px; margin:0 0 4px; color: var(--text-primary);">🚨 Darurat Kesehatan
+        Mental</p>
+      <p style="font-size:12px; color: var(--text-secondary); margin:0; line-height:1.6;">
+        <strong>119 ext 8</strong> (Konseling Psikologi Sejiwa) — tersedia 24 jam.
+      </p>
+    </div>
+    <p style="font-size:12px; margin-bottom:6px;">
+      <a href="/privasi" style="color: var(--text-secondary);">Privasi</a> ·
+      <a href="/syarat" style="color: var(--text-secondary);">Syarat</a> ·
+      <a href="/kontak" style="color: var(--text-secondary);">Kontak</a>
+    </p>
+    <p style="font-size:11px; color: var(--text-muted);">© 2026 utarakan.space 🌿</p>
+  </div>
+
   <script>
-    // Auto-trigger the download once the page loads.
-    // Browsers may block this on some setups — that's exactly why the
-    // manual fallback link above exists, always keep both.
-    const FILE_BUNDLE_URL = "/bundel-utarakan.zip";
+    // ONE thank-you page for every product.
+    // Address decides the file:  /unduh.html            -> bundle
+    //                            /unduh.html?f=jurnal   -> journal-only zip
+    //                            /unduh.html?f=audio    -> breath work audio
+    // Whitelist only — unknown values fall back to the bundle.
+    const FILES = {
+      bundel: "/bundel-utarakan.zip",
+      jurnal: "/jurnal-30-hari.zip",
+      audio: "/napas-utarakan.mp3",
+    };
+    const key = new URLSearchParams(location.search).get("f");
+    const FILE_URL = FILES[key] || FILES.bundel;
+
+    document.getElementById("manual-download-link").href = FILE_URL;
 
     window.addEventListener("load", () => {
-      if (!FILE_BUNDLE_URL.startsWith("#")) {
-        const a = document.createElement("a");
-        a.href = FILE_BUNDLE_URL;
-        a.download = "";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-      }
+      const a = document.createElement("a");
+      a.href = FILE_URL;
+      a.download = "";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
     });
-
-    document.getElementById("manual-download-link").href = FILE_BUNDLE_URL;
   </script>
 
 </body>

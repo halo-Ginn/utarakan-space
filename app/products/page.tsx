@@ -30,7 +30,7 @@ const PRODUCTS: Product[] = [
     priceEn: 'Free / pay as you wish',
     tag: 'PDF',
     icon: '📓',
-    href: '/unduh.html',
+    href: '/unduh.html?f=jurnal',
   },
   {
     id: 'panduan-regulasi',
@@ -44,15 +44,16 @@ const PRODUCTS: Product[] = [
     icon: '🧠',
   },
   {
-    id: 'meditasi-audio',
-    titleId: 'Meditasi Terpandu — Sesi Dasar',
-    titleEn: 'Guided Meditation — Starter Pack',
-    descId: '5 sesi meditasi terpandu dalam Bahasa Indonesia, dirancang untuk pemula yang ingin mulai merawat pikiran.',
-    descEn: '5 guided meditation sessions designed for beginners who want to start caring for their minds.',
-    priceId: 'Segera Hadir',
-    priceEn: 'Coming Soon',
+    id: 'audio-napas',
+    titleId: 'Audio Napas — Grounding & Calming',
+    titleEn: 'Grounding & Calming Breath Work Audio',
+    descId: 'Panduan napas 5 menit untuk menenangkan sistem saraf — ritual sebelum menulis jurnal atau sebelum tidur.',
+    descEn: 'A 5-minute guided breath work audio to calm your nervous system — a ritual before journaling or before sleep.',
+    priceId: 'Rp 0 / seikhlasmu',
+    priceEn: 'Free / pay as you wish',
     tag: 'Audio',
     icon: '🎧',
+    href: '/unduh.html?f=audio',
   },
   {
     id: 'workbook-diri',
@@ -150,11 +151,6 @@ export default function ProductsPage() {
                       style={{ color: available ? '#b87333' : '#9aa89a' }}>
                       {id ? product.priceId : product.priceEn}
                     </span>
-                    {product.tag === 'Bundle' && (
-                      <span className="block text-[10px]" style={{ color: '#6b7f6b' }}>
-                        {id ? 'Hemat 30%' : 'Save 30%'}
-                      </span>
-                    )}
                   </div>
 
                   {available ? (
