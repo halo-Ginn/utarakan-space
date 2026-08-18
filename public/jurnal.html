@@ -1,2381 +1,435 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Utarakan — Jurnal 30 Hari untuk Memproses Luka Batin, dari Kamarmu</title>
-  <meta name="description" content="30 prompt harian yang membimbing kamu dari mengenali luka → menerima → melepaskan. 10 menit sehari. Gratis, selamanya. Tanpa terapis, tanpa keluar rumah.">
+  <title>Utarakan — Jurnal 30 Hari, 10 Menit Sehari</title>
+  <meta name="description" content="30 prompt harian, 10 menit sehari. Gratis, selamanya.">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://utarakan.id/">
-  <meta property="og:title" content="Utarakan — Jurnal 30 Hari untuk Memproses Luka Batin dari Kamarmu">
-  <meta property="og:description" content="30 prompt harian terstruktur. 10 menit sehari. Gratis, selamanya. Tanpa terapis, tanpa keluar rumah, tanpa biaya per sesi.">
-  <meta property="og:image" content="lp-assets/hero.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Perempuan duduk tenang di sudut kamar dengan jurnal terbuka dan lampu meja hangat">
-  <meta property="og:locale" content="id_ID">
-  <meta property="og:site_name" content="Utarakan">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://utarakan.id/">
-  <meta name="twitter:title" content="Utarakan — Jurnal 30 Hari untuk Memproses Luka Batin dari Kamarmu">
-  <meta name="twitter:description" content="30 prompt harian terstruktur. 10 menit sehari. Gratis, selamanya. Tanpa terapis, tanpa keluar rumah.">
-  <meta name="twitter:image" content="lp-assets/hero.jpg">
-  <meta name="twitter:image:alt" content="Perempuan duduk tenang di sudut kamar dengan jurnal terbuka dan lampu meja hangat">
-
-  <!-- JSON-LD Product Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Utarakan — Digital Wellness Journal 30 Hari",
-    "description": "Jurnal terstruktur 30 hari dengan 30 prompt harian yang membimbing dari mengenali luka batin → menerima → melepaskan. PDF Jurnal + Panduan Proses + Audio MP3 Napas. 10 menit sehari, dari kamarmu.",
-    "image": "lp-assets/hero.jpg",
-    "brand": {
-      "@type": "Brand",
-      "name": "Utarakan"
-    },
-    "sku": "utarakan",
-    "offers": {
-      "@type": "Offer",
-      "url": "https://utarakan.id/",
-      "priceCurrency": "IDR",
-      "price": "49000",
-      "availability": "https://schema.org/InStock",
-      "priceValidUntil": "2025-12-31",
-      "seller": {
-        "@type": "Organization",
-        "name": "Utarakan"
-      }
-    }
-  }
-  </script>
-
-  <!-- Google Fonts -->
+  <link rel="prefetch" href="/qris">
+  <link rel="prefetch" href="/unduh.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
-/* ================================================================
-   UTARAKAN — Landing Page Stylesheet
-   BVI: Warm Cream + Terracotta + Sage Green
-   Font: Playfair Display (heading) + Plus Jakarta Sans (body)
-   Mobile-first: 320px base → @media 768px → @media 1024px
-   ================================================================ */
-
-/* ── CSS Custom Properties (BVI Palette) ────────────────────────── */
-:root {
-  /* Backgrounds */
-  --bg-primary:       #FAF7F2;
-  --bg-secondary:     #EDE7DA;
-  --bg-primary-grad:  linear-gradient(180deg, #FAF7F2 0%, #F5F0E8 100%);
-  --bg-secondary-grad: linear-gradient(135deg, #EDE7DA 0%, #E5DDD0 100%);
-
-  /* Accents */
-  --accent-terracotta:       #C4633A;
-  --accent-terracotta-dark:  #A34E2C;
-  --accent-terracotta-grad:  linear-gradient(135deg, #C4633A 0%, #A34E2C 100%);
-  --accent-terracotta-hover: linear-gradient(135deg, #D06E42 0%, #B55830 100%);
-  --accent-rose:             #C9897A;
-  --accent-rose-dark:        #B5746A;
-  --accent-rose-grad:        linear-gradient(135deg, #C9897A 0%, #B5746A 100%);
-  --accent-sage:             #7A9E7E;
-  --accent-sage-dark:        #628265;
-  --accent-sage-grad:        linear-gradient(135deg, #7A9E7E 0%, #628265 100%);
-  --accent-olive:            #8B8B5A;
-  --accent-olive-dark:       #747448;
-
-  /* Text */
-  --text-primary:   #2C1F14;
-  --text-secondary: #6B4F38;
-  --text-muted:     #9E8D7E;
-
-  /* Border / Divider */
-  --border-color:   rgba(139, 115, 94, 0.18);
-
-  /* Overlays */
-  --overlay-cream:  linear-gradient(180deg, rgba(250,247,242,0.0) 0%, rgba(250,247,242,0.92) 100%);
-
-  /* Shadows */
-  --shadow-card:    0 4px 20px rgba(44, 31, 20, 0.08);
-  --shadow-cta:     0 4px 16px rgba(196, 99, 58, 0.35);
-  --shadow-cta-hover: 0 6px 24px rgba(196, 99, 58, 0.50);
-
-  /* Typography */
-  --font-heading:  'Playfair Display', Georgia, serif;
-  --font-body:     'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-
-  /* Radius */
-  --radius-card:   16px;
-  --radius-large:  24px;
-  --radius-btn:    999px;
-  --radius-badge:  8px;
-
-  /* Layout */
-  --container-max:       720px;
-  --container-max-wide:  1100px;
-  --section-pad-v:       56px;
-  --section-pad-h:       20px;
-}
-
-/* ── Base Reset + Box Sizing ────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 20px;
-  font-size: 16px;
-}
-
-body {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.65;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-bottom: 72px; /* room for sticky CTA on mobile */
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  color: var(--accent-terracotta);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-a:focus-visible {
-  outline: 2px solid var(--accent-terracotta);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* ── Container ──────────────────────────────────────────────────── */
-.container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--section-pad-h);
-}
-
-/* ── Typography Utilities ───────────────────────────────────────── */
-.section-h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 5vw, 2rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.01em;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* ── CTA Button ─────────────────────────────────────────────────── */
-.cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px 28px;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: var(--radius-btn);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  min-height: 52px;
-  min-width: 44px;
-  border: none;
-}
-.cta--primary {
-  background: var(--accent-terracotta-grad);
-  color: var(--bg-primary);
-  box-shadow: var(--shadow-cta);
-}
-.cta--primary:hover {
-  background: var(--accent-terracotta-hover);
-  box-shadow: var(--shadow-cta-hover);
-  transform: translateY(-1px);
-  text-decoration: none;
-  color: #fff;
-}
-.cta--primary:active {
-  transform: translateY(0);
-}
-.cta--full {
-  display: flex;
-  width: 100%;
-}
-
-/* ── Badge ──────────────────────────────────────────────────────── */
-.badge {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 5px 12px;
-  border-radius: var(--radius-badge);
-  letter-spacing: 0.02em;
-}
-.badge--rose {
-  background: rgba(201, 137, 122, 0.15);
-  color: var(--accent-rose-dark);
-  border: 1px solid rgba(201, 137, 122, 0.35);
-}
-.badge--sage {
-  background: rgba(122, 158, 126, 0.15);
-  color: var(--accent-sage-dark);
-  border: 1px solid rgba(122, 158, 126, 0.40);
-}
-
-/* ================================================================
-   SECTION 1 — HERO
-   ================================================================ */
-.hero {
-  background: var(--bg-primary-grad);
-  padding: 56px var(--section-pad-h) 48px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle paper texture via pseudo-element */
-.hero__bg-texture {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.hero__inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.hero__badge {
-  margin-bottom: 4px;
-}
-
-.hero__headline {
-  font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 6vw, 2.5rem);
-  font-weight: 800;
-  line-height: 1.18;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-  max-width: 600px;
-}
-
-.hero__headline em {
-  color: var(--accent-terracotta);
-  font-style: normal;
-}
-
-.hero__subhead {
-  font-size: clamp(0.9rem, 3vw, 1.05rem);
-  color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 520px;
-  font-weight: 500;
-}
-
-/* Proof Bar */
-.hero__proof-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 20px;
-  align-items: center;
-  padding: 14px 18px;
-  background: rgba(255,255,255,0.60);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-card);
-  backdrop-filter: blur(4px);
-}
-
-.proof-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.proof-stat__num {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--accent-sage-dark);
-  line-height: 1;
-}
-.proof-stat__label {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  margin-top: 2px;
-  text-align: center;
-}
-.proof-divider {
-  color: var(--border-color);
-  font-size: 1.25rem;
-  line-height: 1;
-  opacity: 0.5;
-}
-
-.hero__cta {
-  margin-top: 4px;
-  width: 100%;
-  max-width: 360px;
-  font-size: 1.05rem;
-}
-
-.hero__microcopy {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-top: -8px;
-}
-
-/* ================================================================
-   SECTION 2 — TESTIMONIAL CAROUSEL
-   ================================================================ */
-.testi-section {
-  background: var(--bg-secondary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.testi-section__label {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.testi-carousel {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-.testi-card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-card);
-  padding: 20px;
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.testi-card__emoji {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.testi-card__quote {
-  font-size: 0.97rem;
-  line-height: 1.55;
-  color: var(--text-primary);
-  border-left: 0;
-  font-style: normal;
-}
-
-.testi-card__quote strong {
-  color: var(--accent-terracotta);
-}
-
-.testi-card__tag {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--accent-sage-dark);
-  background: rgba(122, 158, 126, 0.12);
-  border: 1px solid rgba(122, 158, 126, 0.30);
-  border-radius: var(--radius-badge);
-  padding: 3px 10px;
-  align-self: flex-start;
-}
-
-.testi-section__note {
-  text-align: center;
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-top: 20px;
-}
-
-/* ================================================================
-   SECTION 3 — PAIN VALIDATION
-   ================================================================ */
-.pain-section {
-  background: var(--bg-primary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.pain-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 32px;
-}
-
-.pain-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-card);
-  padding: 18px 20px;
-  border: 1px solid var(--border-color);
-}
-
-.pain-item__dot {
-  color: var(--accent-rose);
-  font-size: 0.6rem;
-  margin-top: 6px;
-  flex-shrink: 0;
-}
-
-.pain-item__text {
-  font-size: 0.97rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  font-style: italic;
-}
-
-.pain-resolution {
-  background: linear-gradient(135deg, rgba(122,158,126,0.10) 0%, rgba(122,158,126,0.05) 100%);
-  border: 1px solid rgba(122, 158, 126, 0.25);
-  border-radius: var(--radius-card);
-  padding: 20px 24px;
-  text-align: center;
-}
-
-.pain-resolution__text {
-  font-size: 1rem;
-  line-height: 1.65;
-  color: var(--text-primary);
-}
-
-.pain-resolution__text strong {
-  color: var(--accent-sage-dark);
-  font-weight: 700;
-}
-
-/* ================================================================
-   SECTION 4 — OPPORTUNITY REFRAME
-   ================================================================ */
-.reframe-section {
-  background: var(--bg-secondary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.reframe-contrast {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-bottom: 32px;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-}
-
-.reframe-contrast__block {
-  padding: 22px 20px;
-  flex: 1;
-}
-
-.reframe-contrast__block--before {
-  background: rgba(237, 231, 218, 0.5);
-}
-
-.reframe-contrast__block--after {
-  background: rgba(122, 158, 126, 0.08);
-}
-
-.reframe-contrast__label {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.reframe-contrast__block--after .reframe-contrast__label {
-  color: var(--accent-sage-dark);
-}
-
-.reframe-contrast__text {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-
-.reframe-contrast__divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background: var(--bg-secondary);
-  font-size: 1.5rem;
-  color: var(--accent-terracotta);
-  font-weight: 700;
-}
-
-/* Negation bullets */
-.reframe-negations {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 32px;
-}
-
-.reframe-negation-item {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  padding: 12px 16px;
-  background: rgba(255,255,255,0.50);
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-}
-
-.reframe-affirm {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--accent-sage-dark);
-  text-align: center;
-  padding: 14px 20px;
-  background: rgba(122, 158, 126, 0.12);
-  border: 1px solid rgba(122, 158, 126, 0.30);
-  border-radius: var(--radius-card);
-  letter-spacing: 0.01em;
-}
-
-/* Audience Segments */
-.reframe-segments__title {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-  font-weight: 700;
-}
-
-.reframe-segments__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-
-.segment-card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-card);
-  padding: 18px 16px;
-  box-shadow: var(--shadow-card);
-}
-
-.segment-card__icon {
-  font-size: 1.5rem;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.segment-card strong {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-  font-weight: 600;
-}
-
-.segment-card p {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* ================================================================
-   SECTION 5 — PACKAGE INTRO
-   ================================================================ */
-.package-intro-section {
-  background: var(--bg-primary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.package-intro-body {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-/* ================================================================
-   SECTION 6 — CORE DELIVERABLES
-   ================================================================ */
-.deliverables-section {
-  background: var(--bg-secondary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.deliverables-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-bottom: 40px;
-}
-
-.deliverable-card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-card);
-  padding: 24px 20px 20px;
-  box-shadow: var(--shadow-card);
-  position: relative;
-}
-
-.deliverable-card__num {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.deliverable-card__title {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-
-.deliverable-card__desc {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-.deliverable-card__emoji {
-  font-size: 1.75rem;
-  display: block;
-}
-
-/* Phase Arc */
-.deliverables-arc {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-large);
-  padding: 28px 20px;
-}
-
-.deliverables-arc__title {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.arc-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-}
-
-.arc-step {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-card);
-  padding: 18px 16px;
-  text-align: center;
-  width: 100%;
-}
-
-.arc-step__range {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-sage-dark);
-  margin-bottom: 4px;
-}
-
-.arc-step__phase {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.arc-step__desc {
-  font-size: 0.86rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  margin: 0;
-}
-
-.arc-arrow {
-  font-size: 1.5rem;
-  color: var(--accent-terracotta);
-  opacity: 0.6;
-  transform: rotate(90deg);
-}
-
-/* ================================================================
-   SECTION 7 — BONUS STACK
-   ================================================================ */
-.bonus-section {
-  background: var(--bg-primary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.bonus-header {
-  margin-bottom: 28px;
-  text-align: center;
-}
-
-.bonus-header__title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 4vw, 1.6rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.3;
-}
-
-.bonus-header__value {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  color: var(--accent-sage-dark);
-  font-weight: 600;
-  margin-top: 4px;
-}
-
-.bonus-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 28px;
-}
-
-.bonus-item {
-  display: flex;
-  gap: 14px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-card);
-  padding: 18px 16px;
-  align-items: flex-start;
-}
-
-.bonus-item__num {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-terracotta-grad);
-  color: var(--bg-primary);
-  border-radius: 50%;
-  font-size: 0.72rem;
-  font-weight: 700;
-  font-family: var(--font-body);
-}
-
-.bonus-item__content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.bonus-item__name {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.4;
-}
-
-.bonus-item__desc {
-  font-size: 0.86rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  margin: 0;
-}
-
-.bonus-item__value {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--accent-sage-dark);
-  margin-top: 2px;
-}
-
-.bonus-total {
-  background: linear-gradient(135deg, rgba(196, 99, 58, 0.08) 0%, rgba(196, 99, 58, 0.04) 100%);
-  border: 1px solid rgba(196, 99, 58, 0.20);
-  border-radius: var(--radius-card);
-  padding: 22px 20px;
-  text-align: center;
-}
-
-.bonus-total__text {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-}
-
-.bonus-total__num {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  color: var(--accent-terracotta);
-  font-weight: 700;
-}
-
-.bonus-total__sub {
-  display: block;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-
-/* ================================================================
-   SECTION 8 — TRANSFORMATION / BAYANGIN
-   ================================================================ */
-.transformation-section {
-  background: var(--bg-secondary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.transformation-narrative {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 28px;
-}
-
-.transformation-narrative p {
-  font-size: 0.97rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.transformation-narrative em {
-  color: var(--accent-terracotta);
-  font-style: italic;
-  font-weight: 500;
-}
-
-.transformation-narrative strong {
-  color: var(--text-primary);
-  font-weight: 700;
-}
-
-.transformation-promise {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-large);
-  padding: 28px 22px;
-  text-align: center;
-  box-shadow: var(--shadow-card);
-}
-
-.transformation-promise p {
-  font-size: 1rem;
-  color: var(--text-primary);
-  line-height: 1.7;
-}
-
-.transformation-promise strong {
-  color: var(--accent-terracotta);
-  font-weight: 700;
-}
-
-/* ================================================================
-   SECTION 9 — WHY NOW / SCARCITY BULLETS
-   ================================================================ */
-.why-now-section {
-  background: var(--bg-primary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.why-bullets {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 32px;
-}
-
-.why-bullet {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-card);
-  padding: 18px 16px;
-}
-
-.why-bullet__no {
-  color: var(--accent-terracotta);
-  font-size: 1rem;
-  flex-shrink: 0;
-  margin-top: 1px;
-  font-weight: 700;
-}
-
-.why-bullet__content {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.why-bullet__content strong {
-  color: var(--text-primary);
-  font-weight: 700;
-}
-
-/* Last Chance Block */
-.last-chance-block {
-  background: linear-gradient(135deg, rgba(196,99,58,0.07) 0%, rgba(196,99,58,0.03) 100%);
-  border: 1px solid rgba(196, 99, 58, 0.22);
-  border-radius: var(--radius-large);
-  padding: 28px 20px;
-}
-
-.last-chance-block__title {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-terracotta);
-  text-align: center;
-  margin-bottom: 14px;
-}
-
-.last-chance-block__body {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.last-chance-block__cta-note {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-terracotta);
-  text-align: center;
-}
-
-/* ================================================================
-   SECTION 10 — PRICING
-   ================================================================ */
-.pricing-section {
-  background: var(--bg-secondary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.pricing-card {
-  background: var(--bg-primary);
-  border: 2px solid var(--accent-terracotta);
-  border-radius: var(--radius-large);
-  padding: 32px 24px;
-  max-width: 480px;
-  margin: 0 auto;
-  box-shadow: 0 8px 40px rgba(196, 99, 58, 0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.pricing-card__badge {
-  display: inline-flex;
-  align-self: center;
-  background: var(--accent-terracotta-grad);
-  color: var(--bg-primary);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 100px;
-}
-
-.pricing-card__anchor {
-  text-align: center;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-.pricing-card__anchor s {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.pricing-card__anchor-label {
-  font-size: 0.8rem;
-}
-
-/* 3-tier price reveal */
-.pricing-card__tiers {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.pricing-tier {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 14px 16px;
-  border-radius: var(--radius-card);
-}
-
-.pricing-tier--standard {
-  background: rgba(237, 231, 218, 0.60);
-  border: 1px solid var(--border-color);
-}
-
-.pricing-tier--special {
-  background: linear-gradient(135deg, rgba(196,99,58,0.08) 0%, rgba(196,99,58,0.04) 100%);
-  border: 1.5px solid rgba(196, 99, 58, 0.35);
-}
-
-.pricing-tier__label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.pricing-tier__price {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  line-height: 1;
-}
-
-.pricing-tier--special .pricing-tier__label {
-  color: var(--accent-terracotta);
-}
-
-.pricing-tier--special .pricing-tier__price {
-  font-size: 2.5rem;
-  color: var(--accent-terracotta);
-}
-
-.pricing-tier__discount {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--accent-sage-dark);
-  background: rgba(122, 158, 126, 0.15);
-  padding: 2px 10px;
-  border-radius: var(--radius-badge);
-}
-
-/* Daily cost framing */
-.pricing-daily-cost {
-  background: rgba(122, 158, 126, 0.10);
-  border: 1px solid rgba(122, 158, 126, 0.25);
-  border-radius: var(--radius-card);
-  padding: 14px 18px;
-  text-align: center;
-}
-
-.pricing-daily-cost p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.pricing-daily-cost strong {
-  color: var(--accent-sage-dark);
-  font-weight: 700;
-}
-
-/* Inclusions */
-.pricing-includes {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 0;
-}
-
-.pricing-includes li {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  font-weight: 600;
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.pricing-includes li:last-child {
-  border-bottom: none;
-}
-
-/* Scarcity */
-.pricing-scarcity {
-  text-align: center;
-}
-
-.pricing-scarcity p {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-terracotta);
-}
-
-.pricing-cta {
-  font-size: 1.05rem;
-  padding: 18px 28px;
-}
-
-.pricing-note {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  text-align: center;
-  margin-top: -8px;
-}
-
-.pricing-urgency {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-card);
-  padding: 16px 18px;
-}
-
-.pricing-urgency p {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  text-align: center;
-  margin: 0;
-}
-
-/* ================================================================
-   SECTION 11 — FAQ
-   ================================================================ */
-.faq-section {
-  background: var(--bg-primary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-}
-
-.faq-list {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--border-color);
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--border-color);
-}
-
-.faq-q {
-  list-style: none;
-  cursor: pointer;
-  padding: 20px 36px 20px 0;
-  font-size: 0.97rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.5;
-  position: relative;
-  user-select: none;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-}
-
-.faq-q::-webkit-details-marker { display: none; }
-.faq-q::marker { display: none; }
-
-.faq-q::after {
-  content: "+";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.5rem;
-  color: var(--accent-terracotta);
-  font-weight: 400;
-  line-height: 1;
-  transition: transform 0.2s ease;
-}
-
-.faq-item[open] .faq-q::after {
-  content: "−";
-}
-
-.faq-a {
-  padding: 0 0 20px 0;
-}
-
-.faq-a p {
-  font-size: 0.93rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  margin: 0;
-}
-
-/* ================================================================
-   SECTION 12 — CONVERSION CTA STRIP
-   ================================================================ */
-.cta-strip {
-  background: var(--bg-secondary);
-  padding: var(--section-pad-v) var(--section-pad-h);
-  text-align: center;
-}
-
-.cta-strip__headline {
-  font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 4.5vw, 1.8rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 14px;
-  line-height: 1.3;
-}
-
-.cta-strip__body {
-  font-size: 0.97rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  max-width: 460px;
-  margin: 0 auto 24px;
-}
-
-/* Risk pills */
-.risk-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.risk-pill {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--accent-sage-dark);
-  background: rgba(122, 158, 126, 0.12);
-  border: 1px solid rgba(122, 158, 126, 0.35);
-  border-radius: 100px;
-  padding: 6px 14px;
-}
-
-.cta-strip__btn {
-  max-width: 380px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-}
-
-.cta-strip__note {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-top: 12px;
-}
-
-/* ================================================================
-   SECTION 14 — FOOTER
-   ================================================================ */
-.footer {
-  background: var(--text-primary);
-  color: var(--bg-secondary);
-  padding: 0;
-}
-
-/* Live Ticker */
-.live-ticker {
-  background: rgba(122, 158, 126, 0.18);
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-  text-align: center;
-}
-
-.live-ticker__dot {
-  color: var(--accent-sage);
-  font-size: 0.6rem;
-  flex-shrink: 0;
-  animation: blink 1.4s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-
-.live-ticker__text {
-  font-size: 0.82rem;
-  color: var(--bg-secondary);
-  font-weight: 500;
-}
-
-/* Countdown Banner */
-.countdown-banner {
-  background: rgba(196, 99, 58, 0.15);
-  padding: 16px 20px;
-  text-align: center;
-  border-top: 1px solid rgba(196, 99, 58, 0.25);
-}
-
-.countdown-banner__label {
-  font-size: 0.78rem;
-  color: var(--accent-rose);
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.countdown-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.countdown-unit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.countdown-num {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--bg-primary);
-  line-height: 1;
-  min-width: 56px;
-  text-align: center;
-}
-
-.countdown-lbl {
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.countdown-sep {
-  font-size: 1.5rem;
-  color: var(--accent-terracotta);
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 14px;
-}
-
-/* Footer Brand */
-.footer-brand {
-  padding: 28px 20px 16px;
-  text-align: center;
-}
-
-.footer-wordmark {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--bg-primary);
-  margin-bottom: 4px;
-}
-
-.footer-tagline {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-/* Footer Legal */
-.footer-legal {
-  padding: 0 20px 28px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: var(--container-max);
-  margin: 0 auto;
-}
-
-.footer-disclaimer {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-}
-
-.footer-legal-links {
-  font-size: 0.8rem;
-}
-
-.footer-legal-links a {
-  color: var(--accent-rose);
-  text-decoration: none;
-}
-
-.footer-legal-links a:hover {
-  text-decoration: underline;
-  color: var(--bg-secondary);
-}
-
-.footer-copy {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.footer-recaptcha {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-}
-
-.footer-recaptcha a {
-  color: var(--text-muted);
-  text-decoration: underline;
-}
-
-/* ================================================================
-   STICKY MOBILE CTA BAR
-   ================================================================ */
-.sticky-cta {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--bg-primary);
-  border-top: 1px solid var(--border-color);
-  padding: 10px 16px;
-  padding-bottom: calc(10px + env(safe-area-inset-bottom));
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  z-index: 90;
-  box-shadow: 0 -4px 20px rgba(44, 31, 20, 0.10);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.sticky-cta.visible {
-  transform: translateY(0);
-}
-
-.sticky-cta__price {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  white-space: nowrap;
-}
-
-.sticky-cta__btn {
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  min-height: 44px;
-  flex-shrink: 0;
-}
-
-/* ================================================================
-   RESPONSIVE — TABLET (768px+)
-   ================================================================ */
-@media (min-width: 768px) {
-
-  :root {
-    --section-pad-v: 80px;
-    --section-pad-h: 32px;
-  }
-
-  body {
-    padding-bottom: 0;
-  }
-
-  /* Hero */
-  .hero {
-    padding: 80px 32px 72px;
-  }
-
-  .hero__proof-bar {
-    flex-wrap: nowrap;
-    width: auto;
-    align-self: flex-start;
-  }
-
-  .hero__cta {
-    width: auto;
-  }
-
-  /* Testimonial carousel → 2-col grid */
-  .testi-carousel {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Pain items → 2 col */
-  .pain-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  /* Reframe contrast → side by side */
-  .reframe-contrast {
-    flex-direction: row;
-  }
-
-  .reframe-contrast__divider {
-    flex-direction: column;
-    writing-mode: initial;
-    padding: 20px 8px;
-    transform: none;
-  }
-
-  /* Reframe segments → 2-col */
-  .reframe-segments__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Deliverables → 3-col */
-  .deliverables-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* Arc steps → horizontal */
-  .arc-steps {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .arc-step {
-    flex: 1;
-  }
-
-  .arc-arrow {
-    transform: none;
-    margin-top: 40px;
-    flex-shrink: 0;
-  }
-
-  /* Sticky CTA mobile-only */
-  .sticky-cta {
-    display: none !important;
-  }
-
-  /* Testimonial → 3-col */
-  .testi-carousel {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-}
-
-/* ================================================================
-   RESPONSIVE — DESKTOP (1024px+)
-   ================================================================ */
-@media (min-width: 1024px) {
-
-  :root {
-    --section-pad-v: 100px;
-    --section-pad-h: 40px;
-    --container-max: 800px;
-  }
-
-  .hero__headline {
-    font-size: 2.75rem;
-  }
-
-  .hero__cta {
-    font-size: 1.1rem;
-    padding: 18px 36px;
-  }
-
-  .section-h2 {
-    font-size: 2.1rem;
-  }
-
-  .pricing-card {
-    padding: 40px 36px;
-  }
-
-  .pricing-tier--special .pricing-tier__price {
-    font-size: 3rem;
-  }
-
-}
-
-/* ================================================================
-   RESPONSIVE — MOBILE ONLY CTA (≤767px)
-   ================================================================ */
-@media (max-width: 767px) {
-  .sticky-cta {
-    display: flex;
-  }
-}
-
-/* ================================================================
-   ACCESSIBILITY UTILITIES
-   ================================================================ */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Focus visible for keyboard nav */
-:focus-visible {
-  outline: 2px solid var(--accent-terracotta);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* High contrast mode support */
-@media (forced-colors: active) {
-  .cta--primary {
-    forced-color-adjust: none;
-  }
-}
-</style>
+    :root {
+      --bg-primary: #FAF7F2;
+      --bg-secondary: #EDE7DA;
+      --accent-terracotta: #C4633A;
+      --accent-terracotta-dark: #A34E2C;
+      --accent-terracotta-grad: linear-gradient(135deg, #C4633A 0%, #A34E2C 100%);
+      --accent-sage: #7A9E7E;
+      --accent-sage-dark: #628265;
+      --text-primary: #2C1F14;
+      --text-secondary: #6B4F38;
+      --text-muted: #9E8D7E;
+      --border-color: rgba(139, 115, 94, 0.18);
+      --shadow-card: 0 4px 20px rgba(44, 31, 20, 0.08);
+      --shadow-cta: 0 4px 16px rgba(196, 99, 58, 0.35);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --radius-card: 16px;
+      --radius-large: 24px;
+      --radius-btn: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header__brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .header__logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-terracotta-grad);
+    }
+
+    .header__name {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      color: var(--text-primary);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 28px 20px 20px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: rgba(122, 158, 126, 0.15);
+      color: var(--accent-sage-dark);
+      border: 1px solid rgba(122, 158, 126, 0.35);
+      margin-bottom: 16px;
+    }
+
+    .hero__headline {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 6vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--text-primary);
+      max-width: 480px;
+      margin: 0 auto 14px;
+    }
+
+    .hero__subhead {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      max-width: 440px;
+      margin: 0 auto 18px;
+    }
+
+    .proof-bar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .proof-stat {
+      text-align: center;
+    }
+
+    .proof-stat__num {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--accent-sage-dark);
+      font-size: 1.1rem;
+    }
+
+    .proof-stat__label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* What's inside — compact */
+    .inside {
+      padding: 4px 20px 20px;
+    }
+
+    .inside__list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .inside__item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-card);
+      padding: 11px 14px;
+      text-align: left;
+    }
+
+    .inside__emoji {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .inside__text strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+
+    .inside__text span {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    /* CTA */
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 28px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      border: none;
+      background: var(--accent-terracotta-grad);
+      color: #fff;
+      box-shadow: var(--shadow-cta);
+      width: 100%;
+      max-width: 380px;
+      cursor: pointer;
+    }
+
+    .cta-wrap {
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .cta-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* Donation block — right after CTA, centered, no scroll needed */
+    .support {
+      max-width: 440px;
+      margin: 20px auto 0;
+      padding: 16px 20px;
+      border-radius: var(--radius-card);
+      background: rgba(122, 158, 126, 0.08);
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .support__title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .support__sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .support__links {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .support__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      background: var(--bg-primary);
+    }
+
+    .support__qris-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* Deeper content anchor */
+    .more-link {
+      display: block;
+      text-align: center;
+      margin: 36px 0 8px;
+      font-size: 0.85rem;
+      color: var(--accent-terracotta-dark);
+    }
+
+    /* Footer disclaimer */
+    .footer {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-emergency {
+      max-width: 480px;
+      margin: 0 auto 16px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: rgba(200, 90, 70, 0.07);
+      border: 1px solid rgba(200, 90, 70, 0.25);
+    }
+
+    .footer-emergency p:first-child {
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+
+    .footer-emergency p {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-disclaimer {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- ============================================================
-       DONATE HEADER (sticky, logo left, donate links right)
-       ============================================================ -->
-  <div style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 20px; background:var(--bg-primary); border-bottom:1px solid var(--border-color);">
-    <a href="#top" style="display:flex; align-items:center; gap:8px; text-decoration:none;">
-      <img src="/logo-utarakan-icon.png" alt="Utarakan" style="width:28px; height:28px; border-radius:50%; object-fit:cover;">
-      <span style="font-family: var(--font-heading); font-size:15px; color: var(--text-primary);">Utarakan</span>
+  <div class="header">
+    <a href="/" class="header__brand" onclick="try{sessionStorage.removeItem('utarakan-foyer-seen')}catch(e){}">
+      <img src="/logo.png" alt="" class="header__logo" style="object-fit:cover;">
+      <span class="header__name">Utarakan</span>
     </a>
-    <div style="display:flex; align-items:center; gap:8px;">
-      <a href="https://teer.id/utarakan.di.sini" target="_blank" rel="noreferrer" style="display:inline-flex; align-items:center; gap:6px; border:1px solid var(--border-color); border-radius:999px; padding:6px 14px; font-family:var(--font-body); font-size:12.5px; color:var(--text-primary); text-decoration:none;">
-        ❤️ Trakteer
-      </a>
-      <a href="https://paypal.me/utarakan" target="_blank" rel="noreferrer" style="display:inline-flex; align-items:center; gap:6px; border:1px solid var(--border-color); border-radius:999px; padding:6px 14px; font-family:var(--font-body); font-size:12.5px; color:var(--text-primary); text-decoration:none;">
-        PayPal
-      </a>
-      <a href="#dukung" style="display:inline-flex; align-items:center; gap:6px; border:1px solid var(--border-color); border-radius:999px; padding:6px 14px; font-family:var(--font-body); font-size:12.5px; color:var(--text-primary); text-decoration:none;">
-        QRIS
-      </a>
-    </div>
   </div>
 
-  <!-- ============================================================
-       SECTION 1: HERO
-       ============================================================ -->
+  <!-- HERO — benefit-first, no diagnostic language -->
   <header class="hero" id="top">
-    <div class="hero__bg-texture" aria-hidden="true"></div>
-    <div class="container hero__inner">
-
-      <div class="hero__badge">
-        <span class="badge badge--rose">✦ Untuk Kamu yang Sudah Terlalu Lama Menahan Sendiri</span>
+    <div class="container">
+      <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
+        <span class="badge" style="margin-bottom:0;">📓 Jurnal</span>
+        <span class="badge" style="margin-bottom:0;">📋 Panduan</span>
+        <span class="badge" style="margin-bottom:0;">🎧 Audio</span>
       </div>
-
-      <h1 class="hero__headline">
-        Ruang Aman untuk Memproses Luka Batin — dalam 30 Hari, dari Kamarmu Sendiri
-      </h1>
-
+      <h1 class="hero__headline">Ruang Tenang 10 Menit Sehari, Selama 30 Hari</h1>
       <p class="hero__subhead">
-        Cara punya pikiran yang lebih jernih — KHUSUS kamu yang sering dibilang "lebay", tidak punya anggaran ekstra untuk biaya sesi terapi, tapi tahu ada sesuatu yang perlu diproses dan belum tahu mulai dari mana.
+        Jurnal terstruktur + panduan napas untuk membantumu merasa lebih tenang dan fokus — dari kamarmu, kapan pun kamu
+        punya waktu.
       </p>
 
-      <div class="hero__proof-bar">
-        <span class="proof-stat">
-          <span class="proof-stat__num">30</span>
-          <span class="proof-stat__label">Prompt Harian</span>
-        </span>
-        <span class="proof-divider" aria-hidden="true">·</span>
-        <span class="proof-stat">
-          <span class="proof-stat__num">10 Menit</span>
-          <span class="proof-stat__label">Sehari Cukup</span>
-        </span>
-        <span class="proof-divider" aria-hidden="true">·</span>
-        <span class="proof-stat">
-          <span class="proof-stat__num">Gratis</span>
-          <span class="proof-stat__label">Selamanya</span>
-        </span>
+      <div class="proof-bar">
+        <div class="proof-stat">
+          <div class="proof-stat__num">30</div>
+          <div class="proof-stat__label">Prompt Harian</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat__num">10 Menit</div>
+          <div class="proof-stat__label">Sehari Cukup</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat__num">Gratis</div>
+          <div class="proof-stat__label">Selamanya</div>
+        </div>
       </div>
-
-      <a href="#pricing" class="cta cta--primary hero__cta">
-        📖 Mulai Perjalananku, Gratis
-      </a>
-
-      <p class="hero__microcopy">Gratis · Unduh langsung · Bisa dimulai malam ini</p>
-
     </div>
   </header>
 
 
-  <!-- ============================================================
-       SECTION 2: TESTIMONIAL CAROUSEL (PROOF-FIRST)
-       ============================================================ -->
-  <section class="testi-section" aria-labelledby="testi-h2" id="bukti">
-    <div class="container">
-      <h2 class="testi-section__label" id="testi-h2">Apa yang Dirasakan Mereka Setelah 30 Hari 💚</h2>
 
-      <div class="testi-carousel" role="list">
-
-        <article class="testi-card" role="listitem">
-          <div class="testi-card__emoji" aria-hidden="true">🌿</div>
-          <blockquote class="testi-card__quote">
-            "Untuk pertama kalinya aku ngerasa <strong>DIDENGAR</strong> — oleh diriku sendiri."
-          </blockquote>
-          <div class="testi-card__tag">Rasa Divalidasi</div>
-        </article>
-
-        <article class="testi-card" role="listitem">
-          <div class="testi-card__emoji" aria-hidden="true">✍️</div>
-          <blockquote class="testi-card__quote">
-            "Pikiran yang tadinya <strong>CROWDED BANGET</strong> jadi lebih bisa diatur."
-          </blockquote>
-          <div class="testi-card__tag">Fokus Membaik</div>
-        </article>
-
-        <article class="testi-card" role="listitem">
-          <div class="testi-card__emoji" aria-hidden="true">🕯️</div>
-          <blockquote class="testi-card__quote">
-            "Akhirnya bisa tidur tanpa scroll dulu <strong>SATU JAM PENUH</strong>."
-          </blockquote>
-          <div class="testi-card__tag">Tidur Lebih Tenang</div>
-        </article>
-
-        <article class="testi-card" role="listitem">
-          <div class="testi-card__emoji" aria-hidden="true">📖</div>
-          <blockquote class="testi-card__quote">
-            "Ternyata 10 menit itu cukup. Hari ke-7 aku sudah <strong>NANGIS LEGA</strong>."
-          </blockquote>
-          <div class="testi-card__tag">Proses Emosi</div>
-        </article>
-
-        <article class="testi-card" role="listitem">
-          <div class="testi-card__emoji" aria-hidden="true">🌸</div>
-          <blockquote class="testi-card__quote">
-            "Tidak ada yang bilang aku lebay di sini. <strong>AKHIRNYA AMAN</strong> untuk jujur."
-          </blockquote>
-          <div class="testi-card__tag">Ruang Aman</div>
-        </article>
-
-        <article class="testi-card" role="listitem">
-          <div class="testi-card__emoji" aria-hidden="true">💛</div>
-          <blockquote class="testi-card__quote">
-            "Promptnya seperti teman yang <strong>TAHU PERSIS</strong> apa yang perlu ditanyakan."
-          </blockquote>
-          <div class="testi-card__tag">Panduan yang Tepat</div>
-        </article>
-
-      </div>
-
-      <p class="testi-section__note">✦ Nama dijaga privasinya atas permintaan. Pengalaman individual bisa berbeda-beda. 🌿</p>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 3: PAIN VALIDATION
-       ============================================================ -->
-  <section class="pain-section" aria-labelledby="pain-h2">
-    <div class="container">
-
-      <h2 class="section-h2" id="pain-h2">Coba jujur, kamu pernah kan kepikiran ini?</h2>
-
-      <div class="pain-list" role="list">
-
-        <div class="pain-item" role="listitem">
-          <span class="pain-item__dot" aria-hidden="true">●</span>
-          <p class="pain-item__text">
-            Kamu gampang lupa, susah fokus, gampang overwhelmed hal kecil — padahal dulu tidak gitu. Mulai takut pekerjaan dan rumah tidak tertangani dengan baik lama-lama...
-          </p>
-        </div>
-
-        <div class="pain-item" role="listitem">
-          <span class="pain-item__dot" aria-hidden="true">●</span>
-          <p class="pain-item__text">
-            Setiap kali coba cerita ke suami atau keluarga, dibilang lebay. Akhirnya semua ditahan sendiri — sampai jadi terlalu berat untuk dibawa sendirian...
-          </p>
-        </div>
-
-        <div class="pain-item" role="listitem">
-          <span class="pain-item__dot" aria-hidden="true">●</span>
-          <p class="pain-item__text">
-            Terapi itu perlu anggaran ekstra, perlu alokasi waktu tersendiri, perlu membuat janji dan keluar rumah. Sulit untuk diakomodasi dengan kondisi jadwal dan keuangan sekarang.
-          </p>
-        </div>
-
-        <div class="pain-item" role="listitem">
-          <span class="pain-item__dot" aria-hidden="true">●</span>
-          <p class="pain-item__text">
-            Tiap malam scroll HP sampai ketiduran karena otak tidak bisa berhenti — tapi kamu terlalu capek untuk "mikirin diri sendiri" secara aktif...
-          </p>
-        </div>
-
-      </div>
-
-      <div class="pain-resolution">
-        <p class="pain-resolution__text">
-          Kamu tidak lebay. Dan kamu tidak harus menerima kondisi ini terus-menerus. 🌿<br>
-          <strong>Ada langkah pertama yang bisa kamu ambil hari ini.</strong>
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 4: OPPORTUNITY REFRAME
-       ============================================================ -->
-  <section class="reframe-section" aria-labelledby="reframe-h2">
-    <div class="container">
-
-      <h2 class="section-h2" id="reframe-h2">
-        Kenapa Ini Bisa Jadi Langkah Nyata untuk Mulai Merawat Dirimu? 💡
-      </h2>
-
-      <div class="reframe-contrast">
-        <div class="reframe-contrast__block reframe-contrast__block--before">
-          <p class="reframe-contrast__label">Dulu</p>
-          <p class="reframe-contrast__text">
-            Satu-satunya pilihan untuk memproses luka batin adalah ke terapis profesional — Rp 300k–600k per sesi, perlu membuat janji, perlu keluar rumah, perlu menjelaskan semuanya ke orang yang belum kamu kenal. Bagi kebanyakan perempuan, ini terasa tidak mungkin.
-          </p>
-        </div>
-        <div class="reframe-contrast__divider" aria-hidden="true">→</div>
-        <div class="reframe-contrast__block reframe-contrast__block--after">
-          <p class="reframe-contrast__label">Sekarang</p>
-          <p class="reframe-contrast__text">
-            Kamu bisa mulai memproses hari ini — dari kamarmu, jam berapapun yang kamu punya, dengan 10 menit dan sebuah pertanyaan yang tepat. Tidak perlu menunggu kondisi "sempurna" untuk mulai merawat dirimu.
-          </p>
-        </div>
-      </div>
-
-      <div class="reframe-negations">
-        <div class="reframe-negation-item">✦ Tanpa perlu pengalaman journaling atau meditasi sebelumnya</div>
-        <div class="reframe-negation-item">✦ Tanpa harus menjelaskan ceritamu ke orang asing dulu</div>
-        <div class="reframe-negation-item">✦ Tanpa biaya per sesi, tanpa jadwal khusus, tanpa keluar rumah</div>
-        <div class="reframe-affirm">SEMUA SUDAH DISIAPKAN DALAM SATU BUNDEL ✅</div>
-      </div>
-
-      <div class="reframe-segments">
-        <h3 class="reframe-segments__title">Ini langkah yang tepat untuk:</h3>
-        <div class="reframe-segments__grid">
-          <div class="segment-card">
-            <span class="segment-card__icon" aria-hidden="true">🏠</span>
-            <strong>Ibu Rumah Tangga</strong>
-            <p>Yang ingin mulai merawat diri sendiri — tanpa meninggalkan tanggung jawab rumah dan anak-anak.</p>
-          </div>
-          <div class="segment-card">
-            <span class="segment-card__icon" aria-hidden="true">⚖️</span>
-            <strong>Perempuan yang Kerja Paruh Waktu</strong>
-            <p>Yang jadwalnya tidak fleksibel untuk janji temu tapi tahu ada sesuatu yang butuh diproses.</p>
-          </div>
-          <div class="segment-card">
-            <span class="segment-card__icon" aria-hidden="true">🌙</span>
-            <strong>Yang Sudah Terlalu Lama Menahan</strong>
-            <p>Yang sering dibilang lebay, tidak pernah punya ruang aman untuk jujur tentang apa yang dirasakan.</p>
-          </div>
-          <div class="segment-card">
-            <span class="segment-card__icon" aria-hidden="true">🌱</span>
-            <strong>Siapa pun yang siap</strong>
-            <p>Yang tahu bahwa merawat diri sendiri bukan kemewahan — tapi kebutuhan yang sudah terlalu lama ditunda.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 5: PACKAGE INTRO
-       ============================================================ -->
-  <section class="package-intro-section" aria-labelledby="pkg-intro-h2">
-    <div class="container">
-      <h2 class="section-h2 text-center" id="pkg-intro-h2">
-        Apa aja yang bakal kamu dapatkan? 📦
-      </h2>
-      <p class="package-intro-body text-center">
-        Kamu tidak perlu buang waktu mencari tahu "cara healing yang benar" dari nol.<br>
-        Utarakan sudah menyiapkan sistem lengkap yang bisa kamu mulai hari ini — dari langkah pertama sampai hari ke-30.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 6: CORE DELIVERABLES
-       ============================================================ -->
-  <section class="deliverables-section" aria-labelledby="deliverables-h2">
-    <div class="container">
-      <h2 class="section-h2 text-center" id="deliverables-h2">Yang Ada di Dalam Bundel Utarakan</h2>
-
-      <div class="deliverables-grid">
-
-        <article class="deliverable-card">
-          <div class="deliverable-card__num" aria-hidden="true">01</div>
-          <h3 class="deliverable-card__title">PDF Jurnal Terstruktur 30 Hari</h3>
-          <p class="deliverable-card__desc">
-            30 halaman prompt harian — satu pertanyaan per hari yang sudah tahu harus menanyakan apa. Tersedia kolom respons untuk kamu isi, plus 3 halaman refleksi di hari ke-10, ke-20, dan ke-30 untuk melihat sendiri seberapa jauh kamu sudah bergerak.
-          </p>
-          <span class="deliverable-card__emoji" aria-hidden="true">📓</span>
-        </article>
-
-        <article class="deliverable-card">
-          <div class="deliverable-card__num" aria-hidden="true">02</div>
-          <h3 class="deliverable-card__title">PDF Panduan Proses</h3>
-          <p class="deliverable-card__desc">
-            Penjelasan mengapa luka batin mempengaruhi fokus dan daya ingat, apa yang normal dirasakan saat journaling, dan — yang penting — kapan dan bagaimana mencari bantuan profesional jika diperlukan. Baca ini sebelum memulai Hari 1. 🎯
-          </p>
-          <span class="deliverable-card__emoji" aria-hidden="true">📋</span>
-        </article>
-
-        <article class="deliverable-card">
-          <div class="deliverable-card__num" aria-hidden="true">03</div>
-          <h3 class="deliverable-card__title">Audio MP3 Panduan Napas (5 Menit)</h3>
-          <p class="deliverable-card__desc">
-            Guided breathing 5 menit untuk ritual sebelum tidur atau sebelum memulai sesi jurnal — membantu sistem saraf menjadi lebih tenang. Pengganti scroll HP yang lebih baik untuk menutup hari. 🌙
-          </p>
-          <span class="deliverable-card__emoji" aria-hidden="true">🎧</span>
-        </article>
-
-      </div>
-
-      <div class="deliverables-arc">
-        <h3 class="deliverables-arc__title">Perjalanan 30 Hari — 3 Fase</h3>
-        <div class="arc-steps">
-          <div class="arc-step">
-            <span class="arc-step__range">Hari 1–10</span>
-            <span class="arc-step__phase">🔍 Mengenali & Menamakan</span>
-            <p class="arc-step__desc">Mulai dari mengenali sensasi dan pola harian — bukan langsung ke trauma besar. Supaya prosesnya tidak overwhelming di awal.</p>
-          </div>
-          <div class="arc-arrow" aria-hidden="true">→</div>
-          <div class="arc-step">
-            <span class="arc-step__range">Hari 11–20</span>
-            <span class="arc-step__phase">🤝 Menerima & Memvalidasi</span>
-            <p class="arc-step__desc">Membimbing untuk mengakui bahwa luka itu nyata dan valid — tanpa menghakimi diri sendiri atau menunggu validasi dari orang lain.</p>
-          </div>
-          <div class="arc-arrow" aria-hidden="true">→</div>
-          <div class="arc-step">
-            <span class="arc-step__range">Hari 21–30</span>
-            <span class="arc-step__phase">🌿 Melepaskan & Melanjutkan</span>
-            <p class="arc-step__desc">Bukan "melupakan" — tapi berhenti membawa beban itu di kepala setiap hari. Membimbing proses melepaskan secara bertahap.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 7: BONUS STACK
-       ============================================================ -->
-  <section class="bonus-section" aria-labelledby="bonus-h2">
-    <div class="container">
-
-      <div class="bonus-header">
-        <h2 class="bonus-header__title" id="bonus-h2">
-          🎁 Yang Kamu Dapatkan di Bundel Utarakan
-        </h2>
-      </div>
-
-      <div class="bonus-list">
-
-        <div class="bonus-item">
-          <span class="bonus-item__num">01</span>
-          <div class="bonus-item__content">
-            <strong class="bonus-item__name">PDF Jurnal 30 Hari — Sistem Prompt Terstruktur</strong>
-            <p class="bonus-item__desc">30 prompt harian yang membimbing langkah demi langkah, dari Hari 1 sampai Hari 30 — tidak ada halaman putih yang membingungkan.</p>
-            </div>
-        </div>
-
-        <div class="bonus-item">
-          <span class="bonus-item__num">02</span>
-          <div class="bonus-item__content">
-            <strong class="bonus-item__name">PDF Panduan Proses — Peta Jalan Journaling</strong>
-            <p class="bonus-item__desc">Panduan lengkap cara memaksimalkan 30 hari, apa yang normal dirasakan, dan kapan harus mencari bantuan profesional.</p>
-            </div>
-        </div>
-
-        <div class="bonus-item">
-          <span class="bonus-item__num">03</span>
-          <div class="bonus-item__content">
-            <strong class="bonus-item__name">Audio MP3 Panduan Napas Malam</strong>
-            <p class="bonus-item__desc">Guided breathing 5 menit untuk menenangkan sistem saraf sebelum tidur — ritual malam yang berbeda dari scroll HP.</p>
-            </div>
-        </div>
-
-        <div class="bonus-item">
-          <span class="bonus-item__num">04</span>
-          <div class="bonus-item__content">
-            <strong class="bonus-item__name">3 Checkpoint Refleksi (Hari 10 · 20 · 30)</strong>
-            <p class="bonus-item__desc">Halaman ringkasan di tiga titik penting — supaya kamu bisa melihat sendiri seberapa jauh kamu sudah bergerak, bukan hanya merasa-rasa.</p>
-            </div>
-        </div>
-
-        <div class="bonus-item">
-          <span class="bonus-item__num">05</span>
-          <div class="bonus-item__content">
-            <strong class="bonus-item__name">Surat Penutup dari Founder</strong>
-            <p class="bonus-item__desc">Ditulis oleh seseorang yang pernah ada di titik yang sama — bukan psikiater, bukan coach. Teman yang paham rasanya dibilang lebay dan harus menemukan jalannya sendiri.</p>
-            </div>
-        </div>
-
-        <div class="bonus-item">
-          <span class="bonus-item__num">06</span>
-          <div class="bonus-item__content">
-            <strong class="bonus-item__name">Akses Offline Sepenuhnya</strong>
-            <p class="bonus-item__desc">Setelah diunduh, tidak ada yang terhubung ke server. Tidak ada yang bisa membaca apa yang kamu tulis kecuali kamu sendiri — privasi 100% terjaga.</p>
-            </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 8: TRANSFORMATION / BAYANGIN
-       ============================================================ -->
-  <section class="transformation-section" aria-labelledby="transformation-h2">
-    <div class="container">
-
-      <h2 class="section-h2 text-center" id="transformation-h2">Bayangin ini deh...</h2>
-
-      <div class="transformation-narrative">
-        <p>
-          Kamar yang biasanya penuh dengan scroll HP sampai mata berat, sekarang berubah jadi <em>"ruang pulihmu"</em> — tempat kamu akhirnya bisa jujur tanpa takut dihakimi.
-        </p>
-        <p>
-          <strong>Malam hari setelah anak tidur</strong>, kamu menyeduh teh, membuka jurnal, dan membaca satu pertanyaan yang sudah tahu apa yang perlu ditanyakan. Kamu menulis. Tidak perlu sempurna — hanya jujur.
-        </p>
-        <p>
-          <strong>Di hari ke-7</strong>, kamu mulai mengenali pola emosi yang selama ini tidak kamu sadari. Ada sesuatu yang mulai terasa lebih ringan.
-        </p>
-        <p>
-          <strong>Di hari ke-14</strong>, pikiran tidak sepadat sebelumnya. Kamu bisa fokus sedikit lebih lama. Notifikasi tidak se-menggelisahkan biasanya.
-        </p>
-        <p>
-          <strong>Di hari ke-30</strong>, kamu memegang 30 hari dokumentasi perjalananmu sendiri — bukti nyata bahwa kamu sudah merawat dirimu, dengan cara yang bisa kamu lakukan sendiri, dari kamarmu.
-        </p>
-        <p>
-          Semua ini terjadi dari rumah, tanpa harus menjelaskan ceritamu ke orang asing, tanpa biaya per sesi yang tidak terjangkau, tanpa menunggu kondisi "sempurna" untuk memulai.
-        </p>
-      </div>
-
-      <div class="transformation-promise">
-        <p>
-          🚀 Ini bukan sekadar buku catatan kosong. Ini adalah <strong>sistem panduan 30 hari</strong> yang dirancang khusus untuk perempuan yang menanggung terlalu banyak — dan sudah waktunya mulai merawat diri sendiri juga.<br><br>
-          Dan sekarang... 💚<br>
-          <strong>Giliran kamu mulai cerita pemulihanmu sendiri.</strong>
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 9: WHY NOW / SCARCITY BULLETS
-       ============================================================ -->
-  <section class="why-now-section" aria-labelledby="why-h2">
-    <div class="container">
-
-      <h2 class="section-h2 text-center" id="why-h2">
-        Kenapa Mulai dengan Utarakan Sekarang? 🎯
-      </h2>
-
-      <div class="why-bullets">
-
-        <div class="why-bullet">
-          <span class="why-bullet__no" aria-hidden="true">✦</span>
-          <div class="why-bullet__content">
-            <strong>Bukan diary kosong yang bikin bingung!</strong> — Ini adalah sistem 30 prompt yang sudah tahu harus menanyakan apa, terstruktur dari hari pertama sampai hari terakhir.
-          </div>
-        </div>
-
-        <div class="why-bullet">
-          <span class="why-bullet__no" aria-hidden="true">✦</span>
-          <div class="why-bullet__content">
-            <strong>Bukan self-help yang terasa seperti tugas sekolah!</strong> — Tone peer-to-peer dari seseorang yang pernah ada di titik yang sama. Aman untuk jujur, tidak ada bahasa klinikal yang berjarak.
-          </div>
-        </div>
-
-        <div class="why-bullet">
-          <span class="why-bullet__no" aria-hidden="true">✦</span>
-          <div class="why-bullet__content">
-            <strong>Bukan biaya ratusan ribu per sesi!</strong> — Gratis untuk akses selamanya ke seluruh bundel. Bisa kamu ulang dari awal kapanpun kamu butuhkan.
-          </div>
-        </div>
-
-      </div>
-
-      <div class="last-chance-block">
-        <h3 class="last-chance-block__title">✦ RUANG INI TERBUKA UNTUKMU ✦</h3>
-        <p class="last-chance-block__body">
-          Kamu tidak harus menunggu dana berlebih untuk sesi terapi. Kamu tidak harus menunggu waktu yang "sempurna". Utarakan bisa dimulai malam ini — dari kamarmu, setelah anak tidur, dengan 10 menit yang selama ini kamu habiskan untuk scroll. Gratis, karena ruang untuk pulih seharusnya tidak jadi penghalang.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 10: PRICING
-       ============================================================ -->
-  <!-- ============================================================
-       SECTION 9.5: TRANSPARANSI DONASI (sebelum bagian unduh)
-       ============================================================ -->
-  <section aria-labelledby="donasi-h2" style="padding: var(--section-pad-v) var(--section-pad-h); background: var(--bg-secondary);">
-    <div class="container" style="max-width: 640px; text-align: center;">
-      <h2 class="section-h2" id="donasi-h2" style="margin-bottom: 12px;">Kenapa Ini Gratis? 🌿</h2>
-      <p style="font-family: var(--font-body); color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
-        Utarakan bisa diunduh siapa saja, gratis, tanpa syarat. Ruang ini tetap hidup lewat dukungan orang-orang yang merasa terbantu — lewat Trakteer, PayPal, atau QRIS. Semuanya sukarela, dan bukan syarat untuk mengakses apa pun di halaman ini.
-      </p>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECTION 10: PRICING
-       ============================================================ -->
-  <section class="pricing-section" id="pricing" aria-labelledby="pricing-h2">
-    <div class="container">
-
-      <h2 class="section-h2 text-center" id="pricing-h2">Ambil Bundel Utarakan</h2>
-
-      <div class="pricing-card">
-
-        <div class="pricing-card__badge">Gratis, Selamanya</div>
-
-        <ul class="pricing-includes" aria-label="Yang termasuk dalam bundel">
-          <li>✅ PDF JURNAL TERSTRUKTUR 30 HARI</li>
-          <li>✅ PDF PANDUAN PROSES (baca ini dulu sebelum mulai)</li>
-          <li>✅ AUDIO MP3 PANDUAN NAPAS 5 MENIT</li>
-          <li>✅ AKSES SELAMANYA — sekali unduh, simpan untuk selamanya</li>
-          <li>✅ PRIVASI 100% — tidak ada yang membaca apa yang kamu tulis</li>
-        </ul>
-
-        <a href="/unduh.html" class="cta cta--primary cta--full pricing-cta">
-          📖 Unduh Sekarang, Gratis
-        </a>
-
-        <p class="pricing-note">Unduh langsung, tanpa perlu daftar email · Tidak butuh internet setelah download</p>
-
-        <div class="pricing-urgency">
-          <p>
-            Utarakan gratis karena kami percaya ruang untuk pulih tidak seharusnya jadi soal mampu atau tidak mampu. Kalau bundel ini membantumu, dan kamu berada di posisi untuk balas kebaikan, kamu bisa ikut menjaga ruang ini tetap hidup lewat donasi di bawah — tapi itu sepenuhnya pilihanmu, kapan pun kamu siap.
-          </p>
-        </div>
-
-      </div>
-
-      <div id="dukung" style="max-width: 480px; margin: 24px auto 0; padding: 20px; border-radius: 16px; background: rgba(122,158,126,0.08); border: 1px solid var(--border-color); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center; text-align: left; scroll-margin-top: 80px;">
-        <a href="/qris.jpg" target="_blank" rel="noopener" style="flex-shrink:0;" title="Klik untuk memperbesar QRIS"><img src="/qris.jpg" alt="QRIS Utarakan — scan untuk donasi via GoPay, OVO, DANA, atau m-banking. Klik untuk memperbesar." style="width:160px; height:auto; border-radius:10px; background:#fff; border:1px solid var(--border-color); display:block;"></a>
-        <div style="flex:1; min-width:200px;">
-          <p style="font-family: var(--font-body); font-weight:600; color: var(--text-primary); margin-bottom:4px;">Yuk, bantu kami berkembang! 🌿</p>
-          <p style="font-family: var(--font-body); font-size:12.5px; color: var(--text-secondary); line-height:1.6;">
-            Scan pakai GoPay, OVO, DANA, atau m-banking apa pun. Atau lewat
-            <a href="https://teer.id/utarakan.di.sini" style="color: var(--accent-terracotta-dark);">Trakteer</a> /
-            <a href="https://paypal.me/utarakan" style="color: var(--accent-terracotta-dark);">PayPal</a> di atas.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 11: FAQ
-       ============================================================ -->
-  <section class="faq-section" aria-labelledby="faq-h2">
-    <div class="container">
-
-      <h2 class="section-h2 text-center" id="faq-h2">Yang Sering Ditanyakan 💛</h2>
-
-      <div class="faq-list">
-
-        <details class="faq-item">
-          <summary class="faq-q">Ini dalam bentuk apa? Produk digitalnya seperti apa?</summary>
-          <div class="faq-a">
-            <p>Utarakan adalah bundel digital — kamu akan mendapatkan 3 file: PDF Jurnal 30 Hari, PDF Panduan Proses, dan Audio MP3 Panduan Napas. Link unduhan langsung tersedia, tanpa perlu isi email atau bikin akun. Bisa dibuka di HP, di tablet, atau di-print — tidak butuh aplikasi khusus. 😊</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-q">Aku belum pernah journaling sama sekali. Ini cocok untuk aku?</summary>
-          <div class="faq-a">
-            <p>Justru ini dirancang untuk yang belum pernah journaling! Sistem 30 prompt Utarakan sudah tahu harus menanyakan apa setiap harinya — kamu tinggal membaca dan menjawab sejujurnya. Tidak ada cara yang salah, tidak ada format yang harus diikuti. Kamu cukup hadir dan jujur. 🤝</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-q">Akses jurnalnya berlaku selamanya atau ada batas waktunya?</summary>
-          <div class="faq-a">
-            <p>SELAMANYA! Sekali unduh, file ada di perangkatmu untuk selamanya. Tidak ada biaya langganan, tidak ada akses yang kedaluwarsa. Kalau kamu mau ulang dari Hari 1 kapanpun kamu butuhkan — silakan. Itu memang caranya. 😊</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-q">Gimana cara mendapatkan aksesnya?</summary>
-          <div class="faq-a">
-            <p>Link unduhan langsung muncul di layar — dan juga dikirim ke email-mu. Cek inbox (dan folder spam juga ya). Ketiga file bisa diunduh langsung dari sana, dan bisa kamu simpan di mana pun yang kamu mau. 👍</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-q">Apakah ada yang bisa membaca apa yang aku tulis di jurnal?</summary>
-          <div class="faq-a">
-            <p>Tidak ada. Utarakan adalah produk offline sepenuhnya — setelah diunduh, tidak ada yang terhubung ke server kami. Apa yang kamu tulis adalah milikmu sepenuhnya. Tidak ada yang bisa mengaksesnya kecuali kamu sendiri. Ini adalah ruangmu. 🌿</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-q">Bagaimana kalau aku skip beberapa hari atau tidak konsisten?</summary>
-          <div class="faq-a">
-            <p>Tidak apa-apa sama sekali. Jurnal ini tidak punya tenggat waktu dan tidak akan menghakimimu. Lanjutkan dari hari terakhir yang kamu isi. Atau mulai ulang dari Hari 1 — itu juga sah. Yang terpenting adalah memulai lagi, bukan menjadi sempurna. 🤝</p>
-          </div>
-        </details>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 12: CONVERSION CTA STRIP
-       (NO FORM, NO PAYMENT BADGES — Scalev injects checkout)
-       ============================================================ -->
-  <section class="cta-strip" id="form" aria-labelledby="cta-strip-h2">
-    <div class="container">
-
-      <h2 class="cta-strip__headline" id="cta-strip-h2">
-        Kamu sudah baca sampai sini — artinya kamu siap. 🌿
-      </h2>
-      <p class="cta-strip__body">
-        Utarakan adalah langkah pertama yang nyata, terjangkau, dan bisa kamu mulai hari ini — dari kamarmu, dalam 10 menit.
-      </p>
-
-      <div class="risk-pills" aria-label="Jaminan yang kamu dapatkan">
-        <span class="risk-pill">✓ 100% Gratis</span>
-        <span class="risk-pill">✓ Akses selamanya</span>
-        <span class="risk-pill">✓ Unduh langsung</span>
-        <span class="risk-pill">✓ Privasi 100%</span>
-      </div>
-
-      <a href="/unduh.html" class="cta cta--primary cta--full cta-strip__btn">
-        📖 Unduh Sekarang, Gratis
-      </a>
-
-      <p class="cta-strip__note">Dikirim otomatis ke email · Tidak butuh internet setelah download</p>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 14: FOOTER (live ticker + countdown + legal)
-       ============================================================ -->
-  <footer class="footer" role="contentinfo">
-
-    <!-- Footer Brand + Legal -->
-    <div class="footer-brand">
-      <p class="footer-wordmark">Utarakan</p>
-      <p class="footer-tagline">Ruang aman untuk jujur — dari kamarmu.</p>
-    </div>
-
-    <div class="footer-emergency" style="max-width:640px; margin:0 auto 24px; padding:16px 20px; border-radius:14px; background:rgba(200,90,70,0.07); border:1px solid rgba(200,90,70,0.25); text-align:center;">
-      <p style="font-family:var(--font-body); font-weight:700; color:var(--text-primary); margin-bottom:6px;">🚨 Darurat Kesehatan Mental</p>
-      <p style="font-family:var(--font-body); font-size:13.5px; color:var(--text-secondary); line-height:1.6;">
-        Jika kamu atau seseorang di dekatmu butuh bantuan segera:<br>
-        <strong>119</strong> (Layanan Darurat Medis) · <strong>119 ext 8</strong> (Konseling Psikologi Sejiwa) — tersedia 24 jam.
-      </p>
-    </div>
-
-    <div class="footer-legal">
-      <p class="footer-disclaimer">
-        Utarakan adalah produk digital wellness untuk self-processing terstruktur. Produk ini bukan pengganti layanan kesehatan mental profesional (psikolog, psikiater, atau terapis). Jika kamu sedang dalam kondisi krisis, hubungi tenaga profesional kesehatan mental terdekat. Informasi layanan tersedia di PDF Panduan Proses yang ada di dalam bundel.
-      </p>
-      <p class="footer-legal-links">
-        <a href="/privasi">Kebijakan Privasi</a>
-        <span aria-hidden="true"> · </span>
-        <a href="/syarat">Syarat & Ketentuan</a>
-        <span aria-hidden="true"> · </span>
-        <a href="/kontak">Kontak</a>
-      </p>
-      <p class="footer-copy">© 2025 Utarakan. All rights reserved.</p>
-      <p class="footer-recaptcha">
-        This site is protected by reCAPTCHA and the Google
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
-        and
-        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a>
-        apply.
-      </p>
-    </div>
-
-  </footer>
-
-  <!-- Sticky Mobile CTA Bar -->
-  <div class="sticky-cta" role="region" aria-label="Tombol unduh cepat" id="sticky-cta">
-    <span class="sticky-cta__price">Gratis</span>
-    <a href="#pricing" class="cta cta--primary sticky-cta__btn">
-      Unduh Sekarang
-    </a>
+  <!-- DOWNLOAD CTA -->
+  <div class="cta-wrap">
+    <a href="/unduh.html" class="cta">📖 Unduh Sekarang, Gratis</a>
+    <p class="cta-note">Unduh langsung · Tanpa daftar email · Bisa dimulai malam ini</p>
   </div>
 
-  <script>
-    // ─── Sticky CTA — Show After Scrolling Past Hero ─────────────
-    const stickyCta = document.getElementById('sticky-cta');
-    function handleScroll() {
-      if (stickyCta) {
-        stickyCta.classList.toggle('visible', window.scrollY > 600);
-      }
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true });
-  </script>
+  <!-- DONATION — right after CTA, no scroll needed -->
+  <div class="support">
+    <p class="support__title">Ingin ikut menjaga ruang ini tetap hidup? 🌿</p>
+    <p class="support__sub">Sepenuhnya sukarela, bukan syarat untuk mengunduh.</p>
+    <div class="support__links">
+      <a href="https://teer.id/utarakan.di.sini" target="_blank" rel="noreferrer" class="support__link"
+        style="background: rgba(196,99,58,0.12); border-color: rgba(196,99,58,0.35); color:#A34E2C; font-weight:600;">❤️
+        Trakteer</a>
+      <a href="https://paypal.me/utarakan" target="_blank" rel="noreferrer" class="support__link"
+        style="background: rgba(0,112,186,0.10); border-color: rgba(0,112,186,0.30); color:#00568F; font-weight:600;">🅿️
+        PayPal</a>
+      <a href="/qris" class="support__link"
+        style="background: rgba(122,158,126,0.14); border-color: rgba(122,158,126,0.40); color:#628265; font-weight:600;">QRIS
+        ▣</a>
+    </div>
+    <p class="support__qris-note">QRIS: GoPay, OVO, DANA, atau m-banking apa pun</p>
+  </div>
 
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"9342f4b042b5485daeb68ea370085721","r":1}' crossorigin="anonymous"></script>
+  <a href="/" class="more-link" onclick="try{sessionStorage.removeItem('utarakan-foyer-seen')}catch(e){}">Ingin mengenal
+    Utarakan lebih jauh? Masuk ke ruang utama →</a>
+
+  <!-- WHAT'S INSIDE — compact, 3 items -->
+  <section class="inside" style="padding-top:28px;">
+    <p
+      style="text-align:center; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">
+      Apa yang kamu dapatkan</p>
+    <div class="inside__list">
+      <div class="inside__item">
+        <span class="inside__emoji">📓</span>
+        <div class="inside__text"><strong>Jurnal 30 Hari</strong><span>Satu prompt singkat per hari, terstruktur dari
+            awal sampai akhir.</span></div>
+      </div>
+      <div class="inside__item">
+        <span class="inside__emoji">📋</span>
+        <div class="inside__text"><strong>Panduan Proses</strong><span>Cara memulai, apa yang normal dirasakan, dan
+            kapan perlu bantuan lebih.</span></div>
+      </div>
+      <div class="inside__item">
+        <span class="inside__emoji">🎧</span>
+        <div class="inside__text"><strong>Audio Panduan Napas</strong><span>5 menit, untuk ritual sebelum tidur atau
+            sebelum menulis.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER — crisis resources + disclaimer preserved -->
+  <footer class="footer" id="lebih">
+    <div class="footer-emergency">
+      <p>🚨 Darurat Kesehatan Mental</p>
+      <p><strong>119 ext 8</strong> (Konseling Psikologi Sejiwa) — tersedia 24 jam.</p>
+    </div>
+    <p class="footer-disclaimer">
+      Utarakan adalah produk digital wellness untuk self-processing terstruktur, bukan pengganti layanan kesehatan
+      mental profesional.
+    </p>
+    <p style="font-size:0.75rem; margin-top:14px;">
+      <a href="/privasi" style="color: var(--text-secondary);">Privasi</a> ·
+      <a href="/syarat" style="color: var(--text-secondary);">Syarat</a> ·
+      <a href="/kontak" style="color: var(--text-secondary);">Kontak</a>
+    </p>
+    <p style="font-size:0.72rem; color: var(--text-muted); margin-top:6px;">© 2026 utarakan.space 🌿</p>
+  </footer>
+
 </body>
+
 </html>
