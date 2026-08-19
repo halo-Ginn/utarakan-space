@@ -16,7 +16,7 @@ export default function Header() {
   const navItems = [
     { href: '/', label: lang === 'id' ? 'Beranda' : 'Home' },
     { href: '/products', label: lang === 'id' ? 'Produk' : 'Products' },
-    { disabled: true, label: lang === 'id' ? 'Kegiatan & Program' : 'Events & Programs' },
+    { href: '/kegiatan', label: lang === 'id' ? 'Kegiatan & Program' : 'Events & Programs' },
     { href: '/lokamanusya', label: 'Lokamanusya' },
     { disabled: true, label: 'Lokasvvara' },
   ]
