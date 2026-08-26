@@ -47,7 +47,7 @@ const PRODUCTS: Product[] = [
     id: 'audio-napas',
     titleId: 'Audio Olah Nafas — Grounding & Calming',
     titleEn: 'Grounding & Calming Breath Work Audio',
-    descId: 'Panduan napas 5 menit untuk menenangkan sistem saraf — ritual sebelum menulis jurnal atau sebelum tidur.',
+    descId: 'Panduan napas 7 menit untuk menenangkan sistem saraf — ritual sebelum menulis jurnal atau sebelum tidur.',
     descEn: 'A 5-minute guided breath work audio to calm your nervous system — a ritual before journaling or before sleep.',
     priceId: 'Rp 0 / seikhlasmu',
     priceEn: 'Free / pay as you wish',
@@ -162,7 +162,7 @@ export default function ProductsPage() {
                       id={`buy-${product.id}`}
                       className="btn-copper text-xs px-4 py-2 whitespace-nowrap flex-shrink-0"
                     >
-                      {id ? 'Unduh / Donasi' : 'Download / Donate'}
+                      {id ? 'Unduh - Dukungan/Tip' : 'Download - Support/Tip'}
                     </a>
                   ) : (
                     <span
