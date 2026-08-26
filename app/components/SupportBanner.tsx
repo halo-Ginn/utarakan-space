@@ -69,7 +69,7 @@ export default function SupportBanner() {
               : 'Every contribution helps us remain a safe space for everyone who needs it.'}
           </p>
 
-          {/* Donation Buttons */}
+          {/* Support Buttons */}
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <a
               id="trakteer-btn"

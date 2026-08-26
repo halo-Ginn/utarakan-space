@@ -18,8 +18,8 @@ export default function SyaratPage() {
                 <h2 className="font-serif text-xl pt-2" style={{ color: '#2d3b2d' }}>Cerita yang kamu kirim</h2>
                 <p>Ceritamu tetap milikmu. Dengan mengirimkannya, kamu mengizinkan tim Utarakan membacanya dan (jika kamu mencantumkan email) membalasnya. Kami tidak akan mempublikasikannya tanpa izinmu. Mohon tidak mengirimkan data pribadi orang lain tanpa persetujuan mereka.</p>
 
-                <h2 className="font-serif text-xl pt-2" style={{ color: '#2d3b2d' }}>Donasi</h2>
-                <p>Donasi bersifat sukarela dan bukan pembayaran atas layanan. Kanal resmi donasi kami hanya melalui{' '}
+                <h2 className="font-serif text-xl pt-2" style={{ color: '#2d3b2d' }}>Dukungan Sukarela</h2>
+                <p>Dukungan (tip) bersifat sukarela, merupakan bentuk apresiasi atas karya dan ruang ini — bukan pembayaran atas layanan, dan bukan penggalangan dana publik. Kanal resmi dukungan kami hanya melalui{' '}
                     <a href="https://teer.id/utarakan.di.sini" target="_blank" rel="noopener noreferrer" style={{ color: '#b87333', textDecoration: 'underline' }}>Trakteer</a>,{' '}
                     <a href="https://paypal.me/utarakan" target="_blank" rel="noopener noreferrer" style={{ color: '#b87333', textDecoration: 'underline' }}>PayPal</a>, dan{' '}
                     <a href="/qris" style={{ color: '#b87333', textDecoration: 'underline' }}>QRIS</a>{' '}
