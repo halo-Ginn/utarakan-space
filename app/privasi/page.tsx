@@ -15,13 +15,17 @@ export default function PrivasiPage() {
         <p>Hanya apa yang kamu kirimkan secara sadar melalui formulir "Bagikan Ceritamu": isi ceritamu, serta nama dan email <em>jika</em> kamu memilih mengisinya. Keduanya opsional — kamu boleh sepenuhnya anonim.</p>
 
         <h2 className="font-serif text-xl pt-2" style={{ color: '#2d3b2d' }}>Apa yang TIDAK kami lakukan</h2>
-        <p>Kami tidak mewajibkan pendaftaran atau email untuk mengunduh produk kami. Kami tidak menjual atau membagikan datamu kepada pihak mana pun. Kami tidak menayangkan iklan. Kami tidak akan pernah mempublikasikan ceritamu tanpa izin tertulis darimu.</p>
+        <p>Kami tidak mewajibkan pendaftaran atau email untuk mengunduh produk kami. Kami tidak menjual atau membagikan datamu kepada pihak manapun. Kami tidak menayangkan iklan pihak ketiga di situs ini. Kami tidak akan pernah mempublikasikan ceritamu tanpa izin tertulis darimu.</p>
 
         <h2 className="font-serif text-xl pt-2" style={{ color: '#2d3b2d' }}>Di mana cerita disimpan</h2>
         <p>Cerita tersimpan di database yang aksesnya dibatasi hanya untuk tim Utarakan. Pengunjung situs — siapa pun — tidak dapat membaca cerita yang dikirimkan orang lain.</p>
 
         <h2 className="font-serif text-xl pt-2" style={{ color: '#2d3b2d' }}>Hakmu</h2>
         <p>Kamu berhak meminta ceritamu dihapus kapan pun. Kirim permintaan ke <a href="mailto:halo@utarakan.space" style={{ color: '#b87333', textDecoration: 'underline' }}>halo@utarakan.space</a> — sebutkan perkiraan tanggal pengiriman ceritamu agar kami dapat menemukannya.</p>
+
+        <h2 className="font-serif text-xl pt-2" style={{ color: '#2d3b2d' }}>Iklan &amp; pengukurannya</h2>
+        <p>Kami tidak menayangkan iklan pihak ketiga di situs ini. Namun, agar bisa menjangkau lebih banyak orang yang membutuhkan, kami sesekali memasang iklan Utarakan di media sosial. Untuk mengukur apakah iklan itu bermanfaat, halaman promosi produk kami — yaitu halaman ajakan unduh (<code>jurnal.html</code>) dan halaman unduhan (<code>unduh.html</code>) — menggunakan <strong>Meta Pixel</strong>, yang mengirim data kunjungan ke Meta.</p>
+        <p>Halaman inti Utarakan — Beranda, Kirim Cerita, Lokamanusya, dan ruang refleksi lainnya — tetap bebas pelacak. Kamu juga bisa menolak pelacakan ini kapan pun lewat pengaturan privasi/iklan di browser atau perangkatmu.</p>
 
         <h2 className="font-serif text-xl pt-2" style={{ color: '#2d3b2d' }}>Perubahan kebijakan</h2>
         <p>Jika kebijakan ini berubah, kami akan memperbarui halaman ini beserta tanggal berlakunya. Ada pertanyaan? Hubungi kami di <a href="mailto:halo@utarakan.space" style={{ color: '#b87333', textDecoration: 'underline' }}>halo@utarakan.space</a>.</p>

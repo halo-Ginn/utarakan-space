@@ -7,6 +7,26 @@
   <title>Utarakan — Jurnal 30 Hari, 10 Menit Sehari</title>
   <meta name="description" content="30 prompt harian, 10 menit sehari. Gratis, selamanya.">
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1687537142342415');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1687537142342415&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <link rel="prefetch" href="/qris">
   <link rel="prefetch" href="/unduh.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +81,6 @@
       padding: 0 20px;
     }
 
-    /* Header */
     .header {
       position: sticky;
       top: 0;
@@ -94,7 +113,6 @@
       color: var(--text-primary);
     }
 
-    /* Hero */
     .hero {
       padding: 28px 20px 20px;
       text-align: center;
@@ -153,7 +171,6 @@
       color: var(--text-muted);
     }
 
-    /* What's inside — compact */
     .inside {
       padding: 4px 20px 20px;
     }
@@ -193,7 +210,6 @@
       color: var(--text-secondary);
     }
 
-    /* CTA */
     .cta {
       display: inline-flex;
       align-items: center;
@@ -224,7 +240,6 @@
       margin-top: 10px;
     }
 
-    /* Support block — right after CTA, centered, no scroll needed */
     .support {
       max-width: 440px;
       margin: 20px auto 0;
@@ -274,7 +289,6 @@
       color: var(--text-muted);
     }
 
-    /* Deeper content anchor */
     .more-link {
       display: block;
       text-align: center;
@@ -283,7 +297,6 @@
       color: var(--accent-terracotta-dark);
     }
 
-    /* Footer disclaimer */
     .footer {
       padding: 40px 20px;
       text-align: center;
@@ -328,7 +341,6 @@
     </a>
   </div>
 
-  <!-- HERO — benefit-first, no diagnostic language -->
   <header class="hero" id="top">
     <div class="container">
       <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
@@ -341,7 +353,6 @@
         Jurnal terstruktur + panduan napas untuk membantumu merasa lebih tenang dan fokus — dari kamarmu, kapan pun kamu
         punya waktu.
       </p>
-
       <div class="proof-bar">
         <div class="proof-stat">
           <div class="proof-stat__num">30</div>
@@ -359,15 +370,11 @@
     </div>
   </header>
 
-
-
-  <!-- DOWNLOAD CTA -->
   <div class="cta-wrap">
     <a href="/unduh.html" class="cta">📖 Unduh Sekarang, Gratis</a>
     <p class="cta-note">Unduh langsung · Tanpa daftar email · Bisa dimulai malam ini</p>
   </div>
 
-  <!-- SUPPORT — right after CTA, no scroll needed -->
   <div class="support">
     <p class="support__title">Ingin ikut menjaga ruang ini tetap hidup? 🌿</p>
     <p class="support__sub">Sepenuhnya sukarela, bukan syarat untuk mengunduh.</p>
@@ -388,7 +395,6 @@
   <a href="/" class="more-link" onclick="try{sessionStorage.removeItem('utarakan-foyer-seen')}catch(e){}">Ingin mengenal
     Utarakan lebih jauh? Masuk ke ruang utama →</a>
 
-  <!-- WHAT'S INSIDE — compact, 3 items -->
   <section class="inside" style="padding-top:28px;">
     <p
       style="text-align:center; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">
@@ -412,7 +418,6 @@
     </div>
   </section>
 
-  <!-- FOOTER — crisis resources + disclaimer preserved -->
   <footer class="footer" id="lebih">
     <div class="footer-emergency">
       <p>🚨 Darurat Kesehatan Mental</p>

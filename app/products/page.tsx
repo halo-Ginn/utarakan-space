@@ -1,10 +1,7 @@
 'use client'
 
-// Location: app/products/page.tsx  (GANTI seluruh isi file lama)
-// v2: Jurnal → /unduh.html (unduhan asli), produk Segera Hadir tombolnya nonaktif,
-//     tombol tidak lagi patah dua baris, typo diperbaiki.
-
 import { useLanguage } from '@/app/context/LanguageContext'
+import UlasanProduk from '@/app/components/UlasanProduk'
 
 interface Product {
   id: string
@@ -16,7 +13,7 @@ interface Product {
   priceEn: string
   tag: string
   icon: string
-  href?: string // ada = produk tersedia; tidak ada = Segera Hadir
+  href?: string
 }
 
 const PRODUCTS: Product[] = [
@@ -48,7 +45,7 @@ const PRODUCTS: Product[] = [
     titleId: 'Audio Olah Nafas — Grounding & Calming',
     titleEn: 'Grounding & Calming Breath Work Audio',
     descId: 'Panduan napas 7 menit untuk menenangkan sistem saraf — ritual sebelum menulis jurnal atau sebelum tidur.',
-    descEn: 'A 5-minute guided breath work audio to calm your nervous system — a ritual before journaling or before sleep.',
+    descEn: 'A 7-minute guided breath work audio to calm your nervous system — a ritual before journaling or before sleep.',
     priceId: 'Rp 0 / seikhlasmu',
     priceEn: 'Free / pay as you wish',
     tag: 'Audio',
@@ -162,7 +159,7 @@ export default function ProductsPage() {
                       id={`buy-${product.id}`}
                       className="btn-copper text-xs px-4 py-2 whitespace-nowrap flex-shrink-0"
                     >
-                      {id ? 'Unduh - Dukungan/Tip' : 'Download - Support/Tip'}
+                      {id ? 'Unduh · Dukungan/Tip' : 'Download · Support/Tip'}
                     </a>
                   ) : (
                     <span
@@ -184,10 +181,13 @@ export default function ProductsPage() {
 
         <p className="text-center text-sm mt-12" style={{ color: '#6b7f6b' }}>
           {id
-            ? '🌿 Semua produk gratis atau seikhlasnya — unduh langsung, tanpa perlu daftar email.'
+            ? '🌿 Semua produk gratis atau bayar semampu kamu — unduh langsung, tanpa perlu daftar email.'
             : '🌿 Everything is free or pay-as-you-wish — direct download, no email required.'}
         </p>
       </section>
+
+      {/* ── Ulasan Produk (komponen mandiri: tampilan + form termoderasi) ── */}
+      <UlasanProduk />
     </>
   )
 }

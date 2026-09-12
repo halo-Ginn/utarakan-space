@@ -2,6 +2,26 @@
 <html lang="id">
 
 <head>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1687537142342415');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1687537142342415&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terima Kasih — Utarakan</title>
@@ -132,7 +152,6 @@
 
 <body>
 
-  <!-- slim site header -->
   <div
     style="position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:10px; width:100%; align-self:stretch;
     padding:10px 20px; background: var(--bg-primary); border-bottom:1px solid var(--border-color); box-sizing:border-box;">
@@ -148,17 +167,14 @@
       style="display:inline-block; cursor:pointer;"><img class="logo" src="/logo.png"
         alt="Utarakan — kembali ke beranda"></a>
 
-    <!-- 1 -->
     <h1>Semoga bermanfaat. 🌿</h1>
 
-    <!-- 2 -->
     <p class="fallback" style="margin-top:4px;">
       Unduhan belum mulai otomatis? <a id="manual-download-link" href="/bundel-utarakan.zip">Klik di sini</a>
     </p>
 
     <hr class="divider">
 
-    <!-- 3 -->
     <p class="social-label">Ingin Ikut Berkontribusi?</p>
     <div class="social-links" style="margin-bottom: 14px;">
       <a href="https://teer.id/utarakan.di.sini" target="_blank" rel="noreferrer"
@@ -179,7 +195,6 @@
       </p>
     </div>
 
-    <!-- 4 -->
     <p class="message">Terima kasih untuk kamu yang sudah membantu kami berkembang dengan dukungan/tip, kontribusimu
       menjaga
       ruang ini tetap hidup dan membantu kami untuk menjangkau lebih banyak orang dengan lebih banyak karya ke depannya.
@@ -190,7 +205,6 @@
 
     <hr class="divider">
 
-    <!-- 5 -->
     <p class="social-label">Ikuti Perjalanan Kami</p>
     <div class="social-links">
       <a href="https://www.instagram.com/utarakan.di.sini/" target="_blank" rel="noreferrer">📷 Instagram</a>
@@ -200,7 +214,6 @@
     </div>
   </div>
 
-  <!-- 6: compact site footer -->
   <div style="text-align:center; padding: 8px 20px 32px;">
     <div style="max-width:440px; margin: 0 auto 18px; padding: 14px 18px; border-radius: 14px;
       background: rgba(200,90,70,0.07); border: 1px solid rgba(200,90,70,0.25); text-align:center;">
@@ -219,11 +232,6 @@
   </div>
 
   <script>
-    // ONE thank-you page for every product.
-    // Address decides the file:  /unduh.html            -> bundle
-    //                            /unduh.html?f=jurnal   -> journal-only zip
-    //                            /unduh.html?f=audio    -> breath work audio
-    // Whitelist only — unknown values fall back to the bundle.
     const FILES = {
       bundel: "/bundel-utarakan.zip",
       jurnal: "/jurnal-30-hari.zip",
@@ -241,6 +249,8 @@
       document.body.appendChild(a);
       a.click();
       a.remove();
+      // Meta: hitung unduhan sebagai konversi (Lead)
+      if (window.fbq) { fbq('track', 'Lead', { content_name: key || 'bundel' }); }
     });
   </script>
 
